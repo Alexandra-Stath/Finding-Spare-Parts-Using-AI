@@ -267,7 +267,7 @@ public class App
         Scanner input = new Scanner(System.in);
 
         for(;;) {
-            System.out.printf("Please enter \"1\" or \"2\" to choose an option:\n1) MAIN MANU\n2) SEARCH BAR\n");
+            System.out.printf("Please enter \"1\" or \"2\" to choose an option:\n1) MAIN MENU\n2) SEARCH BAR\n");
             do {
                 try {
                     key1 = input.nextInt();
@@ -301,14 +301,12 @@ public class App
                         "\"1\", \"2\", \"3\", \"4\", \"5\", \"6\"");
                     }
                 }
-                while (key2 < 1 && key2 > 6);
+                while (key2 < 1 || key2 > 6);
                 System.out.println("Please enter the number of the part you want to select.");
                 String key3;
                 Scanner k = new Scanner(System.in);
                 if (key2 == 1) {
-                    
-                }else if (key2 == 2) {
-                    System.out.printf("1.1 UPPER CONTROL ARM\n1.2 UPPER BALL JOINT\n1.3 COIL SPRING\n" +
+                     System.out.printf("1.1 UPPER CONTROL ARM\n1.2 UPPER BALL JOINT\n1.3 COIL SPRING\n" +
                     "1.4 SNOCK ABSORBER\n1.5 LOWER BALL JOINT\n1.6 LOWER CONTROL ARM\n" +
                     "1.7 CONTROL ARM BUSHINGS\n1.8 STABILIZER LINK\n1.9 IDLER ARM\n" +
                     "1.10 INNER TIE-ROD END\n1.11 CENTER LINK\n1.12 PITMAN ARM\n" +
@@ -317,6 +315,8 @@ public class App
                     "1.18 ANTI-SWAY BAR\n1.19 BALL JOINT\n1.20 UPPER MOUNTING PLATE-BEARING\n" +
                     "1.21 MACPHERSON STRUT\n1.22 BELLOWS\n1.23 RACK-PINION UNIT\n1.24 RACK-PINION BUSHINGS\n" +
                     "1.25 INNER SCOKET ASSEMBLY\n1.26 WHEEL HUB\n1.27 WHEEL BEARING\n1.28 POWER STEERING\n");
+                }else if (key2 == 2) {
+                       System.out.printf(
                 }else if (key2 == 3) {
                     //
                 }else if (key2 == 4) {
