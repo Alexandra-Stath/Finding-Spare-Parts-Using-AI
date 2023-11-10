@@ -268,7 +268,7 @@ public class App
         Scanner input = new Scanner(System.in);
 
         for(;;) {
-            System.out.printf("Please enter \"1\" or \"2\" to choose an option:\n1) MAIN MANU\n2) SEARCH BAR\n");
+            System.out.printf("Please enter \"1\" or \"2\" to choose an option:\n1) MAIN MENU\n2) SEARCH BAR\n");
             do {
                 try {
                     key1 = input.nextInt();
@@ -302,7 +302,7 @@ public class App
                         "\"1\", \"2\", \"3\", \"4\", \"5\", \"6\"");
                     }
                 }
-                while (key2 < 1 && key2 > 6);
+                while (key2 < 1 || key2 > 6);
                 System.out.println("Please enter the number of the part you want to select.");
                 String key3;
                 Scanner k = new Scanner(System.in);
