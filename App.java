@@ -4,18 +4,24 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App
-{   protected String[] partsName = new String[252];
+{   protected static String[] partsName = new String[253];
+    private static String brand;
+    private static int productionYear;
+    private static String model;
 
     public App() {
-        partsName[0] = "1.1 UPPER CONTROL ARM";
-        partsName[1] = "1.2 UPPER BALL JOINT";
-        partsName[2] = "1.3 COIL SPRING";
-        partsName[3] = "1.4 SNOCK ABSORBER";
-        partsName[4] = "1.5 LOWER BALL JOINT";
-        partsName[5] = "1.6 LOWER CONTROL ARM";
-        partsName[6] = "1.7 CONTROL ARM BUSHINGS";
-        partsName[7] = "1.8 STABILIZER LINK";
-        partsName[8] = "1.9 IDLER ARM";
+        brand = "";
+        productionYear = 0;
+        model = "";
+        partsName[0] = "1.1  UPPER CONTROL ARM";
+        partsName[1] = "1.2  UPPER BALL JOINT";
+        partsName[2] = "1.3  COIL SPRING";
+        partsName[3] = "1.4  SNOCK ABSORBER";
+        partsName[4] = "1.5  LOWER BALL JOINT";
+        partsName[5] = "1.6  LOWER CONTROL ARM";
+        partsName[6] = "1.7  CONTROL ARM BUSHINGS";
+        partsName[7] = "1.8  STABILIZER LINK";
+        partsName[8] = "1.9  IDLER ARM";
         partsName[9] = "1.10 INNER TIE-ROD END";
         partsName[10] = "1.11 CENTER LINK";
         partsName[11] = "1.12 PITMAN ARM";
@@ -35,15 +41,15 @@ public class App
         partsName[25] = "1.26 WHEEL HUB";
         partsName[26] = "1.27 WHEEL BEARING";
         partsName[27] = "1.28 POWER STEERING";
-        partsName[28] = "2.1 SPIGOT BEARING";
-        partsName[29] = "2.2 RETAINING SPRING WITH PREFORMED FINGERS";
-        partsName[30] = "2.3 RELEAS RING";
-        partsName[31] = "2.4 RETAINING SPRING";
-        partsName[32] = "2.5 BALL PIN FOR CLUCH FORK";
-        partsName[33] = "2.6 FLYWHEEL";
-        partsName[34] = "2.7 DRIVE DISC";
-        partsName[35] = "2.8 PRESSURE PLATE";
-        partsName[36] = "2.9 INNER FULCRUM RING";
+        partsName[28] = "2.1  SPIGOT BEARING";
+        partsName[29] = "2.2  RETAINING SPRING WITH PREFORMED FINGERS";
+        partsName[30] = "2.3  RELEAS RING";
+        partsName[31] = "2.4  RETAINING SPRING";
+        partsName[32] = "2.5  BALL PIN FOR CLUCH FORK";
+        partsName[33] = "2.6  FLYWHEEL";
+        partsName[34] = "2.7  DRIVE DISC";
+        partsName[35] = "2.8  PRESSURE PLATE";
+        partsName[36] = "2.9  INNER FULCRUM RING";
         partsName[37] = "2.10 OUTER FULCRUM RING";
         partsName[38] = "2.11 CLUTCH COVER";
         partsName[39] = "2.12 RELEASE FORK";
@@ -52,15 +58,15 @@ public class App
         partsName[42] = "2.15 DIAPHRAGM SPRING";
         partsName[43] = "2.16 PILOT BUSHING";
         partsName[44] = "2.17 BELLHOUSING";
-        partsName[45] = "3.1 FUEL PUMP";
-        partsName[46] = "3.2 CYLINDER HEAD COVER";
-        partsName[47] = "3.3 GASKET";
-        partsName[48] = "3.4 THERMOSTAT COVER AND GASKET";
-        partsName[49] = "3.5 THERMOSTAT";
-        partsName[50] = "3.6 HEAT GAUGE UNIT";
-        partsName[51] = "3.7 BRACKET";
-        partsName[52] = "3.8 ROCKER ARM AND SHAFT ASSEMBLE";
-        partsName[53] = "3.9 ROCKER ARM";
+        partsName[45] = "3.1  FUEL PUMP";
+        partsName[46] = "3.2  CYLINDER HEAD COVER";
+        partsName[47] = "3.3  GASKET";
+        partsName[48] = "3.4  THERMOSTAT COVER AND GASKET";
+        partsName[49] = "3.5  THERMOSTAT";
+        partsName[50] = "3.6  HEAT GAUGE UNIT";
+        partsName[51] = "3.7  BRACKET";
+        partsName[52] = "3.8  ROCKER ARM AND SHAFT ASSEMBLE";
+        partsName[53] = "3.9  ROCKER ARM";
         partsName[54] = "3.10 ROCKER ARM SPRING";
         partsName[55] = "3.11 HYDRAULIC LASH ADJUSTSTER";
         partsName[56] = "3.12 CAMSHAFT PULLEY";
@@ -119,15 +125,15 @@ public class App
         partsName[109] = "3.65 IDLER";
         partsName[110] = "3.66 CAMSHAFT PULLEY";
         partsName[111] = "3.67 CRANKSHAFT PULLEY";
-        partsName[112] = "4.1 FLANGE YOKE";
-        partsName[113] = "4.2 U-JOINT BEARING PLATE STYLE";
-        partsName[114] = "4.3 SLIP YOKE BP STYLE";
-        partsName[115] = "4.4 TUBE ";
-        partsName[116] = "4.5 TUBE YOKE";
-        partsName[117] = "4.6 END YOKE ";
-        partsName[118] = "4.7 MIDSHIP SHAFT";
-        partsName[119] = "4.8 CENTER BEARING ";
-        partsName[120] = "4.9 U-JOINT";
+        partsName[112] = "4.1  FLANGE YOKE";
+        partsName[113] = "4.2  U-JOINT BEARING PLATE STYLE";
+        partsName[114] = "4.3  SLIP YOKE BP STYLE";
+        partsName[115] = "4.4  TUBE ";
+        partsName[116] = "4.5  TUBE YOKE";
+        partsName[117] = "4.6  END YOKE ";
+        partsName[118] = "4.7  MIDSHIP SHAFT";
+        partsName[119] = "4.8  CENTER BEARING ";
+        partsName[120] = "4.9  U-JOINT";
         partsName[121] = "4.10 DIFFERENTIAL";
         partsName[122] = "4.11 AXLE";
         partsName[123] = "4.12 CARRIER";
@@ -179,15 +185,15 @@ public class App
         partsName[169] = "4.58 PINION GEAR";
         partsName[170] = "4.59 RING GEAR ";
         partsName[171] = "4.60 TRANSMISSION";
-        partsName[172] = "5.1 PRIMARY RETURN SPRING";
-        partsName[173] = "5.2 PRIMARY SHOE";
-        partsName[174] = "5.3 SHOE HOLD-DOWN";
-        partsName[175] = "5.4 PARKING BRAKE CABLE";
-        partsName[176] = "5.5 ADJUSTER LEVER SPRING";
-        partsName[177] = "5.6 BACKING PLATE ";
-        partsName[178] = "5.7 SECONDARY SHOE RETURN SERING";
-        partsName[179] = "5.8 WHEEL CYLINDER ASSEMBLY";
-        partsName[180] = "5.9 GEBLE GUIDE";
+        partsName[172] = "5.1  PRIMARY RETURN SPRING";
+        partsName[173] = "5.2  PRIMARY SHOE";
+        partsName[174] = "5.3  SHOE HOLD-DOWN";
+        partsName[175] = "5.4  PARKING BRAKE CABLE";
+        partsName[176] = "5.5  ADJUSTER LEVER SPRING";
+        partsName[177] = "5.6  BACKING PLATE ";
+        partsName[178] = "5.7  SECONDARY SHOE RETURN SERING";
+        partsName[179] = "5.8  WHEEL CYLINDER ASSEMBLY";
+        partsName[180] = "5.9  GEBLE GUIDE";
         partsName[181] = "5.10 PARKING BRAKE STRUT";
         partsName[182] = "5.11 PARKING BRAKE LEVER";
         partsName[183] = "5.12 ADJUSTING CABLE";
@@ -210,15 +216,15 @@ public class App
         partsName[200] = "5.29 CYLINDER BODY";
         partsName[201] = "5.30 BLEEDER CAP";
         partsName[202] = "5.31 MOUNTING BRACKET";
-        partsName[203] = "6.1 THERMOSTAT";
-        partsName[204] = "6.2 RESERVOIR TANK";
-        partsName[205] = "6.3 FUEL TANK ";
-        partsName[206] = "6.4 FUEL TANK PRESSURE SENSOR";
-        partsName[207] = "6.5 OXYGEN SENSOR ";
-        partsName[208] = "6.6 AIR INJECTION CHECK VALVE";
-        partsName[209] = "6.7 EGR VALVE";
-        partsName[210] = "6.8 PURGE";
-        partsName[211] = "6.9 FUEL FILTER";
+        partsName[203] = "6.1  THERMOSTAT";
+        partsName[204] = "6.2  RESERVOIR TANK";
+        partsName[205] = "6.3  FUEL TANK ";
+        partsName[206] = "6.4  FUEL TANK PRESSURE SENSOR";
+        partsName[207] = "6.5  OXYGEN SENSOR ";
+        partsName[208] = "6.6  AIR INJECTION CHECK VALVE";
+        partsName[209] = "6.7  EGR VALVE";
+        partsName[210] = "6.8  PURGE";
+        partsName[211] = "6.9  FUEL FILTER";
         partsName[212] = "6.10 FUEL TANK VENT ";
         partsName[213] = "6.11 FUEL ISOLATION VALVE";
         partsName[214] = "6.12 HIGH PRESSURE  PUMP";
@@ -261,11 +267,56 @@ public class App
         partsName[251] = "6.49 OIL RETURN GASKET";
         partsName[252] = "6.50 BOOST SOLENOID VALVE";
     }
-    public static void main( String[] args ) throws InputMismatchException {
-    
+    public static void main( String args[]) throws InputMismatchException {
+        
+        App makeArray = new App();
         int key1 = 0;
         Scanner input = new Scanner(System.in);
-
+        System.out.println("Please enter the motor vehicle's Brand, model and year of production");
+        System.out.printf("Brand:");
+        int c = 0;
+        do {
+            if (c == 1) {
+                c = 0;
+            }
+            try {
+                brand = input.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.printf("ERROR: Inappropriate argument passed into the system, please enter a valid argument.");
+                input.nextLine();
+                c = 1;
+            }
+        } while(c == 1);
+        System.out.printf("\nModel:");
+        do {
+            if (c == 1) {
+                c = 0;
+            }
+            try {
+                model = input.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.printf("ERROR: Inappropriate argument passed into the system, please enter a valid argument.");
+                input.nextLine();
+                c = 1;
+            }
+        } while(c == 1); 
+        System.out.printf("\nYear of production:");
+         do {
+            if (c == 1) {
+                c = 0;
+            }
+            try {
+                productionYear = input.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.printf("ERROR: Inappropriate argument passed into the system, please enter a valid argument.");
+                input.nextLine();
+                c = 1;
+            }
+            if (productionYear < 1886) {
+               c = 1; 
+            }
+        } while(c == 1);  
+        System.out.printf("\n");
         for(;;) {
             System.out.printf("Please enter \"1\" or \"2\" to choose an option:\n1) MAIN MENU\n2) SEARCH BAR\n");
             do {
@@ -281,13 +332,13 @@ public class App
                 }else if (key1 != 1 && key1 != 2) {
                     System.out.printf("Please enter one of the accepted values ass following:\n \"1\" or\"2\"\n");
                 } 
-            }
-            while (key1 != 1 && key1 != 2);
-                
+            } while (key1 != 1 && key1 != 2);
+            String key3;
+            Scanner k = new Scanner(System.in);    
             if (key1 == 1) {
                 int key2 = 0;
                 System.out.printf("Please enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\" to select a category:\n" +
-                "1) STEERING PARTS\n2) CLUTCH PARTS\n3) ENGINE PARTS\n4) PROPELLER SHAFT\n5) BRAKE PARTS\n6) EXTRA");
+                "1) STEERING PARTS\n2) CLUTCH PARTS\n3) ENGINE PARTS\n4) PROPELLER SHAFT\n5) BRAKE PARTS\n6) EXTRA\n");
                 do {
                     try {
                     key2 = input.nextInt();
@@ -302,9 +353,7 @@ public class App
                     }
                 }
                 while (key2 < 1 || key2 > 6);
-                System.out.println("Please enter the number of the part you want to select.");
-                String key3;
-                Scanner k = new Scanner(System.in);
+                System.out.println("Please enter the number of the part you want to select.");               
                 if (key2 == 1) {
                      System.out.println("1.1 UPPER CONTROL ARM\n1.2 UPPER BALL JOINT\n1.3 COIL SPRING\n" +
                     "1.4 SNOCK ABSORBER\n1.5 LOWER BALL JOINT\n1.6 LOWER CONTROL ARM\n" +
@@ -369,12 +418,111 @@ public class App
                     "6.34 DISTRIBUTOR\n6.35 BATTERY\n6.36 WARM-UP REGULATOR\n6.37 CHOKE VALVE\n6.38 OIL CATCH CAN\n6.39 DOWNPIPE\n6.40 IAC VALVE\n" + 
                     "6.41 VSV FOR ACIS\n6.42 IGNITER\n6.43 ENGINE NOUNT\n6.44 CIRCUIT\n6.45 CLUTCH CYLINDER\n6.46 BLOW OFF VLAVE\n6.47 INTERCOOLER\n" +
                     "6.48 TURBO\n6.49 OIL RETURN GASKET\n6.50 BOOST SOLENOID VALVE");
-                }
-                key3 = k.nextLine();
-                input.close();
+                }  
+                do {
+                    key3 = k.nextLine();
+                } while (key3 != "1.1" && key3 != "1.2" && key3 != "1.3" && key3 != "1.4" && key3 != "1.5" && key3 != "1.6" &&
+                    key3 != "1.7" && key3 != "1.8" && key3 != "1.9" && key3 != "1.10" && key3 != "1.11" && key3 != "1.12" &&
+                    key3 != "1.13" && key3 != "1.14" && key3 != "1.15" && key3 != "1.16" && key3 != "1.17" && key3 != "1.18" &&
+                    key3 != "1.19" && key3 != "1.20" && key3 != "1.21" && key3 != "1.22" && key3 != "1.23" && key3 != "1.24" &&
+                    key3 != "1.25" && key3 != "1.26" && key3 != "1.27" && key3 != "1.28" && key3 != "2.1" && key3 != "2.2" &&
+                    key3 != "2.3" && key3 != "2.4" && key3 != "2.5" && key3 != "2.6" && key3 != "2.7" && key3 != "2.8" &&
+                    key3 != "2.9" && key3 != "2.10" && key3 != "2.11" && key3 != "2.12" && key3 != "2.13" && key3 != "2.14" &&
+                    key3 != "2.15" && key3 != "2.16" && key3 != "2.17" && key3 != "3.1" && key3 != "3.2" && key3 != "3.3" &&
+                    key3 != "3.4" && key3 != "3.5" && key3 != "3.6" && key3 != "3.7" && key3 != "3.8" && key3 != "3.9" &&
+                    key3 != "3.10" && key3 != "3.11" && key3 != "3.12" && key3 != "3.13" && key3 != "3.14" && key3 != "3.15" &&
+                    key3 != "3.16" && key3 != "3.17" && key3 != "3.18" && key3 != "3.19" && key3 != "3.20" && key3 != "3.21" &&
+                    key3 != "3.22" && key3 != "3.23" && key3 != "3.24" && key3 != "3.25" && key3 != "3.26" && key3 != "3.27" &&
+                    key3 != "3.28" && key3 != "3.29" && key3 != "3.30" && key3 != "3.31" && key3 != "3.32" && key3 != "3.33" &&
+                    key3 != "3.34" && key3 != "3.35" && key3 != "3.36" && key3 != "3.37" && key3 != "3.38" && key3 != "3.39" &&
+                    key3 != "3.40" && key3 != "3.41" && key3 != "3.42" && key3 != "3.43" && key3 != "3.44" && key3 != "3.45" &&
+                    key3 != "3.46" && key3 != "3.47" && key3 != "3.48" && key3 != "3.49" && key3 != "3.50" && key3 != "3.51" &&
+                    key3 != "3.52" && key3 != "3.53" && key3 != "3.54" && key3 != "3.55" && key3 != "3.56" && key3 != "3.57" &&
+                    key3 != "3.58" && key3 != "3.59" && key3 != "3.60" && key3 != "3.61" && key3 != "3.62" && key3 != "3.63" &&
+                    key3 != "3.64" && key3 != "3.65" && key3 != "3.66" && key3 != "3.67" && key3 != "4.1" && key3 != "4.2" &&
+                    key3 != "4.3" && key3 != "4.4" && key3 != "4.5" && key3 != "4.6" && key3 != "4.7" && key3 != "4.8" &&
+                    key3 != "4.9" && key3 != "4.10" && key3 != "4.11" && key3 != "4.12" && key3 != "4.13" && key3 != "4.14" &&
+                    key3 != "4.15" && key3 != "4.16" && key3 != "4.17" && key3 != "4.18" && key3 != "4.19" && key3 != "4.20" &&
+                    key3 != "4.21" && key3 != "4.22" && key3 != "4.23" && key3 != "4.24" && key3 != "4.25" && key3 != "4.26" &&
+                    key3 != "4.27" && key3 != "4.28" && key3 != "4.29" && key3 != "4.30" && key3 != "4.31" && key3 != "4.32" &&
+                    key3 != "4.33" && key3 != "4.34" && key3 != "4.35" && key3 != "4.36" && key3 != "4.37" && key3 != "4.38" &&
+                    key3 != "4.39" && key3 != "4.40" && key3 != "4.41" && key3 != "4.42" && key3 != "4.43" && key3 != "4.44" &&
+                    key3 != "4.45" && key3 != "4.46" && key3 != "4.47" && key3 != "4.48" && key3 != "4.49" && key3 != "4.50" &&
+                    key3 != "4.51" && key3 != "4.52" && key3 != "4.53" && key3 != "4.54" && key3 != "4.55" && key3 != "4.56" &&
+                    key3 != "4.57" && key3 != "4.58" && key3 != "4.59" && key3 != "4.60" && key3 != "5.1" && key3 != "5.2" &&
+                    key3 != "5.3" && key3 != "5.4" && key3 != "5.5" && key3 != "5.6" && key3 != "5.7" && key3 != "5.8" &&
+                    key3 != "5.9" && key3 != "5.10" && key3 != "5.11" && key3 != "5.12" && key3 != "5.13" && key3 != "5.14" &&
+                    key3 != "5.15" && key3 != "5.16" && key3 != "5.17" && key3 != "5.18" && key3 != "5.19" && key3 != "5.20" &&
+                    key3 != "5.21" && key3 != "5.22" && key3 != "5.23" && key3 != "5.24" && key3 != "5.25" && key3 != "5.26" &&
+                    key3 != "5.27" && key3 != "5.28" && key3 != "5.29" && key3 != "5.30" && key3 != "5.31" && key3 != "6.1" &&
+                    key3 != "6.2" && key3 != "6.3" && key3 != "6.4" && key3 != "6.5" && key3 != "6.6" && key3 != "6.7" &&
+                    key3 != "6.8" && key3 != "6.9" && key3 != "6.10" && key3 != "6.11" && key3 != "6.12" && key3 != "6.13" &&
+                    key3 != "6.14" && key3 != "6.15" && key3 != "6.16" && key3 != "6.17" && key3 != "6.18" && key3 != "6.19" &&
+                    key3 != "6.20" && key3 != "6.21" && key3 != "6.22" && key3 != "6.23" && key3 != "6.24" && key3 != "6.25" &&
+                    key3 != "6.26" && key3 != "6.27" && key3 != "6.28" && key3 != "6.29" && key3 != "6.30" && key3 != "6.31" &&
+                    key3 != "6.32" && key3 != "6.33" && key3 != "6.34" && key3 != "6.35" && key3 != "6.36" && key3 != "6.37" &&
+                    key3 != "6.38" && key3 != "6.39" && key3 != "6.40" && key3 != "6.41" && key3 != "6.42" && key3 != "6.43" &&
+                    key3 != "6.44" && key3 != "6.45" && key3 != "6.46" && key3 != "6.47" && key3 != "6.48" && key3 != "6.49" &&
+                    key3 != "6.50");
                 k.close();
                 return;
-            } else {
+            } else {     
+                do {
+                    System.out.printf("SEARCH:");
+                    key3 = k.nextLine();
+                } while (key3 != "UPPER CONTROL ARM" && key3 != "UPPER BALL JOINT" && key3 != "COIL SPRING" && key3 != "SNOCK ABSORBER" && key3 != "LOWER BALL JOINT" && key3 != "LOWER CONTROL ARM" &&
+                     key3 != "CONTROL ARM BUSHINGS" && key3 != "STABILIZER LINK" && key3 != "IDLER ARM" && key3 != "INNER TIE-ROD END" && key3 != "CENTER LINK" && key3 != "PITMAN ARM" &&
+                    key3 != "ADJUSTING SLEEVE" && key3 != "OUTER TIE-ROD END" && key3 != "STEERING KNUCKLE" && key3 != "POWER STEERING PUMP" && key3 != "POWER STEERING GEARBOX" && key3 != "ANTI-SWAY BAR" &&
+                    key3 != "BALL JOINT" && key3 != "UPPER MOUNTING PLATE-BEARING" && key3 != "MACPHERSON STRUT" && key3 != "BELLOWS" && key3 != "RACK-PINION UNIT" && key3 != "RACK-PINION BUSHINGS" &&
+                    key3 != "INNER SCOKET ASSEMBLY" && key3 != "WHEEL HUB" && key3 != "WHEEL BEARING" && key3 != "POWER STEERING" && key3 != "SPIGOT BEARING" && key3 != "RETAINING SPRING WITH PREFORMED FINGERS" &&
+                    key3 != "RELEAS RING" && key3 != "RETAINING SPRING" && key3 != "BALL PIN FOR CLUCH FORK" && key3 != "FLYWHEEL" && key3 != "DRIVE DISC" && key3 != "PRESSURE PLATE" &&
+                    key3 != "INNER FULCRUM RING" && key3 != "OUTER FULCRUM RING" && key3 != "CLUTCH COVER" && key3 != "RELEASE FORK" && key3 != "RETURN SPRING OF RELEASE FORK" && key3 != "RELEASE BEARING" &&
+                    key3 != "DIAPHRAGM SPRING" && key3 != "PILOT BUSHING" && key3 != "BELLHOUSING" && key3 != "FUEL PUMP" && key3 != "CYLINDER HEAD COVER" && key3 != "GASKET" &&
+                    key3 != "THERMOSTAT COVER AND GASKET" && key3 != "THERMOSTAT" && key3 != "HEAT GAUGE UNIT" && key3 != "BRACKET" && key3 != "ROCKER ARM AND SHAFT ASSEMBLE" && key3 != "ROCKER ARM" &&
+                    key3 != "ROCKER ARM SPRING" && key3 != "HYDRAULIC LASH ADJUSTSTER" && key3 != "CAMSHAFT PULLEY" && key3 != "THRUST PLATE" && key3 != "CAMSHAFT" && key3 != "CYLINDER HEAD BOLTS" &&
+                    key3 != "CYLINDER HEAD" && key3 != "CYLINDER HEAD GASKET" && key3 != "VALVE SPRING" && key3 != "VALVE KEEPER" && key3 != "VALVE SPRING SEAT UPPER" && key3 != "VALVE SPRING SEAT LOWER" &&
+                    key3 != "VALVE" && key3 != "VALVE SEAL" && key3 != "VALVE GUIDE" && key3 != "CAMSHAFT OIL SEAL" && key3 != "FUEL PRESSURE REGULATOR" && key3 != "RADIATOR" &&
+                    key3 != "SORT BLOCK" && key3 != "PISTON RING(NO.1 COMPRESSION)" && key3 != "PISTON RING(NO.2 COMPRESSION)" && key3 != "PISTON RING(SIDE RAIL AND EXPANDER)" && key3 != "SNAP RING " && key3 != "PISTON PIN" &&
+                    key3 != "CONNECTING ROD BUSHING" && key3 != "CONNECTING ROD" && key3 != "CONNECTING ROD BEARING" && key3 != "CONNECTING ROD CAP" && key3 != "ENGINE COOLANT DRAIN PLUG" && key3 != "WATER BYPASS HOSE" &&
+                    key3 != "WATER PUMP" && key3 != "O-RING" && key3 != "OIL PUMP" && key3 != "OIL SEAL" && key3 != "REAR OIL SEAL RATAINER" && key3 != "KNOCK SENSOR 1" &&
+                    key3 != "KNOCK SENSOR 2" && key3 != "FUEL PIPE SUPPORT" && key3 != "UNION NUT" && key3 != "OIL PRESSURE SWITCH" && key3 != "GENERATOR" && key3 != "IDLER PULLER" &&
+                    key3 != "CRANKSHAFT OIL SEAL" && key3 != "CRANKSHAFT" && key3 != "CRANKSHAFT THRUST WASHER" && key3 != "MAIN BEARING" && key3 != "MAIN BEARING CAP" && key3 != "LH ENGINE MOUNTING BRACKET AND INSULATOR ASSEMBLY" &&
+                    key3 != "OIL FILTER AND BRACKET ASSEMBLY" && key3 != "OIL LEVEL SENSOR" && key3 != "COIL" && key3 != "TENSIONING  RAIL" && key3 != "BALANCE SHAFT CHAIN TENIONING" && key3 != "COLLAR BOLT TENSIONING RAIL" &&
+                    key3 != "CHAIN SPROCKET OIL PUMP" && key3 != "TENSIONING RAIL OIL PUMP" && key3 != "IDLER" && key3 != "CAMSHAFT PULLEY" && key3 != "CRANKSHAFT PULLEY" && key3 != "PROPELLER SHAFT" &&
+                    key3 != "FLANGE YOKE" && key3 != "U-JOINT BEARING PLATE STYLE" && key3 != "SLIP YOKE BP STYLE" && key3 != "TUBE" && key3 != "TUBE YOKE" && key3 != "END YOKE" &&
+                    key3 != "MIDSHIP SHAFT" && key3 != "CENTER BEARING" && key3 != "U-JOINT" && key3 != "DIFFERENTIAL" && key3 != "AXLE" && key3 != "CARRIER" &&
+                    key3 != "RING GEAR" && key3 != "AXLE SHAFT SIDE GEAR" && key3 != "AXLE SHAFT" && key3 != "AXLE HOUSING" && key3 != "PINION GEAR" && key3 != "PINION SHAFT" &&
+                    key3 != "FUEL INJECTOR" && key3 != "OIL PAN" && key3 != "OIL PAN BAFFLE PLATE" && key3 != "OIL STRAINER " && key3 != "OIL PAN" && key3 != "DRAIN PLUG" &&
+                    key3 != "SPARK PLUG" && key3 != "EXHAUST MANIFOLD" && key3 != "PRESSURE RELIEF VALUE" && key3 != "INTAKE MANIFOLD" && key3 != "INTATE MANIFOLD GASKET" && key3 != "EXHAUST MANIFOLD GASKET" &&
+                    key3 != "RUBBER GROMMETS" && key3 != "MAIN SEAL" && key3 != "CAMSHAFT  FRONT OIL SEALS" && key3 != "CYLINDER HEAD GASKET" && key3 != "CRANK GEAR IOL SEAL" && key3 != "OIL PAN GASKET" &&
+                    key3 != "FRONT CRANK OIL SEAL" && key3 != "WATER PUMP GASKET" && key3 != "TIMING BELT DRIVE PULLEY" && key3 != "DISTRIBUTOR O-RING" && key3 != "CAMS" && key3 != "TIMING BELT" &&
+                    key3 != "TIMING CHAIN" && key3 != "SLIDE RAIL TIMING GEAR" && key3 != "CHAIN SPROCKET EXHAUST CAMSHAFT" && key3 != "COLLAR BOLT TENSIONING RAILS" && key3 != "TENSIONING RAIL TIMING GEAR" && key3 != "CHAIN SPROCKET INA INTAKE CAMSHAFT ADJUSTER" &&
+                    key3 != "GUIDE RAIL TIMING GEAR" && key3 != "HYDRAULIC TENSIONER CAMSHAFT CHAIN DRIVE" && key3 != "FUEL PUMP ASSEMBLE" && key3 != "UNIVERSAL JOINT" && key3 != "DIFFERENTIAL SIDE GEAR" && key3 != "SIDE GEAR" &&
+                    key3 != "DIFFERENTIAL CASE" && key3 != "BEARING CAP" && key3 != "AXLE HOUSING" && key3 != "PINION GEAR" && key3 != "RING GEAR" && key3 != "TRANSMISSION" &&
+                    key3 != "PRIMARY RETURN SPRING" && key3 != "PRIMARY SHOE" && key3 != "SHOE HOLD-DOWN" && key3 != "PARKING BRAKE CABLE" && key3 != "ADJUSTER LEVER SPRING" && key3 != "BACKING PLATE" &&
+                    key3 != "SECONDARY SHOE RETURN SERING" && key3 != "WHEEL CYLINDER ASSEMBLY" && key3 != "GEBLE GUIDE" && key3 != "PARKING BRAKE STRUT" && key3 != "PARKING BRAKE LEVER" && key3 != "ADJUSTING CABLE" &&
+                    key3 != "SECONDARY SHOE" && key3 != "ADJUSTING LEVER" && key3 != "ADJUSTING ASSEMBLY" && key3 != "BLEEDER SCREW" && key3 != "CALIPER" && key3 != "DUST BOOT" &&
+                    key3 != "PISTON" && key3 != "BRAKEPADS" && key3 != "ANTI-RATTLE CLIPS" && key3 != "ROTOR" && key3 != "PISTON RING" && key3 != "LOCK PIN" &&
+                    key3 != "PAD CLIP" && key3 != "SHIM" && key3 != "PIN BOOTS" && key3 != "GUIDEPIN" && key3 != "CYLINDER BODY" && key3 != "BLEEDER CAP" &&
+                    key3 != "MOUNTING BRACKET" && key3 != "THERMOSTAT" && key3 != "RESERVOIR TANK" && key3 != "FUEL TANK" && key3 != "FUEL TANK PRESSURE SENSOR" && key3 != "OXYGEN SENSOR" &&
+                    key3 != "AIR INJECTION CHECK VALVE" && key3 != "EGR VALVE" && key3 != "PURGE" && key3 != "FUEL FILTER" && key3 != "FUEL TANK VENT" && key3 != "FUEL ISOLATION VALVE" &&
+                    key3 != "HIGH PRESSURE  PUMP" && key3 != "FUEL RAIL" && key3 != "FUEL GAUGE" && key3 != "HEATER" && key3 != "HEATER BLOWER FAN" && key3 != "DRAIN TAP" &&
+                    key3 != "COOLANT TEMPERATURE SENSOR" && key3 != "HEATER CONTROL VALVE" && key3 != "BLOWER MOTOR" && key3 != "OVERFLOW RECOVERY TANK HOSE" && key3 != "COOLANT RESERVOIR" && key3 != "THROTTLE BODY" &&
+                    key3 != "COOLANT FAN" && key3 != "RADIATOR SHROUD - FAN SHROUD" && key3 != "FUEL ACCUMULATOR" && key3 != "MAF SENSOR" && key3 != "MAP SENSOR" && key3 != "IAT SENSOR" &&
+                    key3 != "O2 SENSOR" && key3 != "NOX SENSOR" && key3 != "EGT SENSOR" && key3 != "EGR SENSOR" && key3 != "DISTRIBUTOR" && key3 != "BATTERY" &&
+                    key3 != "WARM-UP REGULATOR" && key3 != "CHOKE VALVE" && key3 != "OIL CATCH CAN" && key3 != "DOWNPIPE" && key3 != "IAC VALVE" && key3 != "VSV FOR ACIS" &&
+                    key3 != "IGNITER" && key3 != "ENGINE NOUNT" && key3 != "CIRCUIT" && key3 != "CLUTCH CYLINDER" && key3 != "BLOW OFF VLAVE" && key3 != "INTERCOOLER" &&
+                    key3 != "TURBO" && key3 != "OIL RETURN GASKET" && key3 != "BOOST SOLENOID VALVE");
+                System.out.printf("\n");
+                int i = 0;
+                boolean flag = false;
+                int choice;
+                while (flag == false) {
+                    if (partsName[i] == key3) {
+                        flag = true;
+                        choice = i;
+                    } 
+                }
                 input.close();
                 return;
             }
