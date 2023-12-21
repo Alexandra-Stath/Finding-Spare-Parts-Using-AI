@@ -269,7 +269,7 @@ public class App
     }
     public static void main( String args[]) throws InputMismatchException {
         
-        App makeArray = new App();
+        new App();
         int key1 = 0;
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the motor vehicle's Brand, model and year of production");
@@ -324,7 +324,7 @@ public class App
                     key1 = input.nextInt();
                 } catch (InputMismatchException e) {
                     System.out.printf("ERROR: Inappropriate argument passed into the system\nplease enter one " + 
-                    "of the accepted values ass following:\n \"1\" or\"2\"\n");
+                    "of the accepted values as following:\n \"1\" or\"2\"\n");
                     input.nextLine();
                 }
                 if (key1 == 0) {
@@ -353,13 +353,9 @@ public class App
                     }
                 }
                 while (key2 < 1 || key2 > 6);
-<<<<<<< HEAD
                 System.out.println("Please enter the number of the part you want to select.");
                 String key3;
                 Scanner k = new Scanner(System.in);
-=======
-                System.out.println("Please enter the number of the part you want to select.");               
->>>>>>> ptrWLF2000-patch-1
                 if (key2 == 1) {
                      System.out.println("1.1 UPPER CONTROL ARM\n1.2 UPPER BALL JOINT\n1.3 COIL SPRING\n" +
                     "1.4 SNOCK ABSORBER\n1.5 LOWER BALL JOINT\n1.6 LOWER CONTROL ARM\n" +
@@ -427,7 +423,7 @@ public class App
                 }  
                 do {
                     key3 = k.nextLine();
-                } while (key3 != "1.1" && key3 != "1.2" && key3 != "1.3" && key3 != "1.4" && key3 != "1.5" && key3 != "1.6" &&
+                } while (!(key3.equals("1.1"))/* && key3 != "1.2" && key3 != "1.3" && key3 != "1.4" && key3 != "1.5" && key3 != "1.6" &&
                     key3 != "1.7" && key3 != "1.8" && key3 != "1.9" && key3 != "1.10" && key3 != "1.11" && key3 != "1.12" &&
                     key3 != "1.13" && key3 != "1.14" && key3 != "1.15" && key3 != "1.16" && key3 != "1.17" && key3 != "1.18" &&
                     key3 != "1.19" && key3 != "1.20" && key3 != "1.21" && key3 != "1.22" && key3 != "1.23" && key3 != "1.24" &&
@@ -469,14 +465,14 @@ public class App
                     key3 != "6.32" && key3 != "6.33" && key3 != "6.34" && key3 != "6.35" && key3 != "6.36" && key3 != "6.37" &&
                     key3 != "6.38" && key3 != "6.39" && key3 != "6.40" && key3 != "6.41" && key3 != "6.42" && key3 != "6.43" &&
                     key3 != "6.44" && key3 != "6.45" && key3 != "6.46" && key3 != "6.47" && key3 != "6.48" && key3 != "6.49" &&
-                    key3 != "6.50");
+                    key3 != "6.50"); */
                 k.close();
                 return;
             } else {     
                 do {
                     System.out.printf("SEARCH:");
                     key3 = k.nextLine();
-                } while (key3 != "UPPER CONTROL ARM" && key3 != "UPPER BALL JOINT" && key3 != "COIL SPRING" && key3 != "SNOCK ABSORBER" && key3 != "LOWER BALL JOINT" && key3 != "LOWER CONTROL ARM" &&
+                } while /* (key3 != "UPPER CONTROL ARM" && key3 != "UPPER BALL JOINT" && key3 != "COIL SPRING" && key3 != "SNOCK ABSORBER" && key3 != "LOWER BALL JOINT" && key3 != "LOWER CONTROL ARM" &&
                      key3 != "CONTROL ARM BUSHINGS" && key3 != "STABILIZER LINK" && key3 != "IDLER ARM" && key3 != "INNER TIE-ROD END" && key3 != "CENTER LINK" && key3 != "PITMAN ARM" &&
                     key3 != "ADJUSTING SLEEVE" && key3 != "OUTER TIE-ROD END" && key3 != "STEERING KNUCKLE" && key3 != "POWER STEERING PUMP" && key3 != "POWER STEERING GEARBOX" && key3 != "ANTI-SWAY BAR" &&
                     key3 != "BALL JOINT" && key3 != "UPPER MOUNTING PLATE-BEARING" && key3 != "MACPHERSON STRUT" && key3 != "BELLOWS" && key3 != "RACK-PINION UNIT" && key3 != "RACK-PINION BUSHINGS" &&
@@ -498,7 +494,7 @@ public class App
                     key3 != "FLANGE YOKE" && key3 != "U-JOINT BEARING PLATE STYLE" && key3 != "SLIP YOKE BP STYLE" && key3 != "TUBE" && key3 != "TUBE YOKE" && key3 != "END YOKE" &&
                     key3 != "MIDSHIP SHAFT" && key3 != "CENTER BEARING" && key3 != "U-JOINT" && key3 != "DIFFERENTIAL" && key3 != "AXLE" && key3 != "CARRIER" &&
                     key3 != "RING GEAR" && key3 != "AXLE SHAFT SIDE GEAR" && key3 != "AXLE SHAFT" && key3 != "AXLE HOUSING" && key3 != "PINION GEAR" && key3 != "PINION SHAFT" &&
-                    key3 != "FUEL INJECTOR" && key3 != "OIL PAN" && key3 != "OIL PAN BAFFLE PLATE" && key3 != "OIL STRAINER " && key3 != "OIL PAN" && key3 != "DRAIN PLUG" &&
+                    key3 != "FUEL INJECTOR" && key3 != "OIL PAN" && key3 != "OIL PAN BAFFLE PLATE" && key3 != "OIL STRAINER" && key3 != "OIL PAN" && key3 != "DRAIN PLUG" &&
                     key3 != "SPARK PLUG" && key3 != "EXHAUST MANIFOLD" && key3 != "PRESSURE RELIEF VALUE" && key3 != "INTAKE MANIFOLD" && key3 != "INTATE MANIFOLD GASKET" && key3 != "EXHAUST MANIFOLD GASKET" &&
                     key3 != "RUBBER GROMMETS" && key3 != "MAIN SEAL" && key3 != "CAMSHAFT  FRONT OIL SEALS" && key3 != "CYLINDER HEAD GASKET" && key3 != "CRANK GEAR IOL SEAL" && key3 != "OIL PAN GASKET" &&
                     key3 != "FRONT CRANK OIL SEAL" && key3 != "WATER PUMP GASKET" && key3 != "TIMING BELT DRIVE PULLEY" && key3 != "DISTRIBUTOR O-RING" && key3 != "CAMS" && key3 != "TIMING BELT" &&
@@ -518,7 +514,7 @@ public class App
                     key3 != "O2 SENSOR" && key3 != "NOX SENSOR" && key3 != "EGT SENSOR" && key3 != "EGR SENSOR" && key3 != "DISTRIBUTOR" && key3 != "BATTERY" &&
                     key3 != "WARM-UP REGULATOR" && key3 != "CHOKE VALVE" && key3 != "OIL CATCH CAN" && key3 != "DOWNPIPE" && key3 != "IAC VALVE" && key3 != "VSV FOR ACIS" &&
                     key3 != "IGNITER" && key3 != "ENGINE NOUNT" && key3 != "CIRCUIT" && key3 != "CLUTCH CYLINDER" && key3 != "BLOW OFF VLAVE" && key3 != "INTERCOOLER" &&
-                    key3 != "TURBO" && key3 != "OIL RETURN GASKET" && key3 != "BOOST SOLENOID VALVE");
+                    key3 != "TURBO" && key3 != "OIL RETURN GASKET" && key3 != "BOOST SOLENOID VALVE"); */
                 System.out.printf("\n");
                 int i = 0;
                 boolean flag = false;
