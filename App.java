@@ -460,19 +460,19 @@ public class App
                          !(key3.equals("5.4")) && !(key3.equals("5.5")) && !(key3.equals("5.6")) && !(key3.equals("5.7")) && !(key3.equals("5.8")) && !(key3.equals("5.9")) &&
                          !(key3.equals("5.10")) && !(key3.equals("5.11")) && !(key3.equals("5.12")) && !(key3.equals("5.13")) && !(key3.equals("5.14")) &&
                          !(key3.equals("5.15")) && !(key3.equals("5.16")) && !(key3.equals("5.17")) && !(key3.equals("5.18")) && !(key3.equals("5.19")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
-                         !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) && !(key3.equals("")) &&
+                         !(key3.equals("5.20")) && !(key3.equals("5.21")) && !(key3.equals("5.22")) && !(key3.equals("5.23")) && !(key3.equals("5.24")) &&
+                         !(key3.equals("5.25")) && !(key3.equals("5.26")) && !(key3.equals("5.27")) && !(key3.equals("5.28")) && !(key3.equals("5.29")) &&
+                         !(key3.equals("5.30")) && !(key3.equals("5.31")) && !(key3.equals("6.1")) && !(key3.equals("6.2")) && !(key3.equals("6.3")) &&
+                         !(key3.equals("6.4")) && !(key3.equals("6.5")) && !(key3.equals("6.6")) && !(key3.equals("6.7")) && !(key3.equals("6.8")) &&
+                         !(key3.equals("6.9")) && !(key3.equals("6.10")) && !(key3.equals("6.11")) && !(key3.equals("6.12")) && !(key3.equals("6.13")) &&
+                         !(key3.equals("6.14")) && !(key3.equals("6.15")) && !(key3.equals("6.16")) && !(key3.equals("6.17")) && !(key3.equals("6.18")) &&
+                         !(key3.equals("6.19")) && !(key3.equals("6.20")) && !(key3.equals("6.21")) && !(key3.equals("6.22")) && !(key3.equals("6.23")) &&
+                         !(key3.equals("6.24")) && !(key3.equals("6.25")) && !(key3.equals("6.26")) && !(key3.equals("6.27")) && !(key3.equals("6.28")) &&
+                         !(key3.equals("6.29")) && !(key3.equals("6.30")) && !(key3.equals("6.31")) && !(key3.equals("6.32")) && !(key3.equals("6.33")) &&
+                         !(key3.equals("6.34")) && !(key3.equals("6.35")) && !(key3.equals("6.36")) && !(key3.equals("6.37")) && !(key3.equals("6.38")) &&
+                         !(key3.equals("6.39")) && !(key3.equals("6.40")) && !(key3.equals("6.41")) && !(key3.equals("6.42")) && !(key3.equals("6.43")) &&
+                         !(key3.equals("6.44")) && !(key3.equals("6.45")) && !(key3.equals("6.46")) && !(key3.equals("6.47")) && !(key3.equals("6.48")) &&
+                         !(key3.equals("6.49")) && !(key3.equals("6.50")))
                 k.close();
                 return;
             } else {     
