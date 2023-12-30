@@ -354,8 +354,7 @@ public class App
                 }
                 while (key2 < 1 || key2 > 6);
                 System.out.println("Please enter the number of the part you want to select.");
-                String key3;
-                Scanner k = new Scanner(System.in);
+                Scanner q = new Scanner(System.in);
                 if (key2 == 1) {
                      System.out.println("1.1 UPPER CONTROL ARM\n1.2 UPPER BALL JOINT\n1.3 COIL SPRING\n" +
                     "1.4 SNOCK ABSORBER\n1.5 LOWER BALL JOINT\n1.6 LOWER CONTROL ARM\n" +
@@ -422,7 +421,7 @@ public class App
                     "6.48 TURBO\n6.49 OIL RETURN GASKET\n6.50 BOOST SOLENOID VALVE");
                 }  
                 do {
-                    key3 = k.nextLine();
+                    key3 = q.nextLine();
                 } while (!(key3.equals("1.1")) && !(key3.equals("1.2")) && !(key3.equals("1.3")) && !(key3.equals("1.4")) && !(key3.equals("1.5")) &&
                          !(key3.equals("1.6")) && !(key3.equals("1.7")) && !(key3.equals("1.8")) && !(key3.equals("1.9")) && !(key3.equals("1.10")) &&
                          !(key3.equals("1.11")) && !(key3.equals("1.12")) && !(key3.equals("1.13")) && !(key3.equals("1.14")) && !(key3.equals("1.15")) &&
@@ -472,8 +471,8 @@ public class App
                          !(key3.equals("6.34")) && !(key3.equals("6.35")) && !(key3.equals("6.36")) && !(key3.equals("6.37")) && !(key3.equals("6.38")) &&
                          !(key3.equals("6.39")) && !(key3.equals("6.40")) && !(key3.equals("6.41")) && !(key3.equals("6.42")) && !(key3.equals("6.43")) &&
                          !(key3.equals("6.44")) && !(key3.equals("6.45")) && !(key3.equals("6.46")) && !(key3.equals("6.47")) && !(key3.equals("6.48")) &&
-                         !(key3.equals("6.49")) && !(key3.equals("6.50")))
-                k.close();
+                         !(key3.equals("6.49")) && !(key3.equals("6.50")));
+                q.close();
                 return;
             } else {     
                 do {
@@ -533,6 +532,7 @@ public class App
                     } 
                 }
                 input.close();
+                q.close();
                 return;
             }
         }
