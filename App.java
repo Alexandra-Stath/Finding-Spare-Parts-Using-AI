@@ -344,7 +344,7 @@ public class App
                     key2 = input.nextInt();
                     } catch (InputMismatchException e) {
                     System.out.printf("ERROR: Inappropriate argument passed into the system\nplease enter one " + 
-                    "of the accepted values ass following:\n \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\"\n");
+                    "of the accepted values as following:\n \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\"\n");
                     input.nextLine();
                     }
                     if (key2 < 1 && key2 > 6) {
