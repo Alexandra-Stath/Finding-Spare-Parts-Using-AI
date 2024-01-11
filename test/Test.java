@@ -1,10 +1,11 @@
 package t21;
+
 import static org.junit.Assert.*;
 
 import java.util.Scanner;
 
 import org.junit.Test;
-public class TestApp {
+public class Test {
     @Test
     public void testMethod() {
         Scanner sc = new Scanner(System.in);
@@ -35,5 +36,3 @@ public class TestApp {
         System.out.println(assertEquals(expectedOutput, actualOutput));
     }
 }
-
-
