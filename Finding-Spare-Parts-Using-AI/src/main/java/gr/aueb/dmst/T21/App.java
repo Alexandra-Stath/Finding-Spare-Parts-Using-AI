@@ -317,30 +317,30 @@ public class App
             }
         } while(c == 1);  
         System.out.printf("\n");
-            System.out.printf("Please enter \"1\" or \"2\" to choose an option:\n1) MAIN MENU\n2) SEARCH BAR\n");  //  Δείνω την επίλογη στο χρήστη να επιλέξει αν θέλει να βρεί το κομμάτι 
-            do {
-                c = 0;                                                                                                     //  που τον ενδιαφέρει μέσω αναζήτησης η από το προσχεδιασμένο μενού επιλογών
-                try {
-                    key1 = input.nextInt();  // Διαβάζω την επιλογή του χρήστη
-                } catch (InputMismatchException e) {  // Ελέγχω αν ο χρήστεις έδωσε κάποια μεταβλητή διαφορετικού τύπου από integer
-                    System.out.printf("ERROR: Inappropriate argument passed into the system\nplease enter one " + 
-                    "of the accepted values as following:\n \"1\" or\"2\"\n");
-                    input.nextLine();
-                    c = 1;
-                }
-                if (key1 != 1 && key1 != 2) {  // Ελέγχω αν ο χρήστης έδωσε αποδεκτή τιμή
-                    System.out.printf("Please enter one of the accepted values ass following:\n \"1\" or\"2\"\n");
-                    c = 1;
-                } 
-            } while (c == 1); //  Επαναλαμβάνω την διαδηκασία μέχρι ο χρήστης να δώσει μία αποδεκτή τιμή
-            String key3;  //  Oρισμός της μεταβλητής key3 στην οποία αποθηκέυετε η 3η επιλογή του χρήστη εάν χριαστεί
-            Scanner k = new Scanner(System.in);    
-            if (key1 == 1) {  //  Εάν επέλεξε την πρώτη επιλογή του εμφανίζει το πρώτο μενού
-                int key2 = 0;  //  Ορίζω την μεταβλητή στην οποία θα αποθηκευτεί η 2η επιλογή τοου χρήστη
-                System.out.printf("Please enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\" to select a category:\n" +
-                "1) STEERING PARTS\n2) CLUTCH PARTS\n3) ENGINE PARTS\n4) PROPELLER SHAFT\n5) BRAKE PARTS\n6) EXTRA\n");  //  Εμφανίζω τις κατηγορίες στις οποίες χωρίζονται τα ανταλακτικά 
-                do {  //  Ελεγχώ με αντίστοιχω τρόπο όπως και παραπάνω ότι ο χρήστης έδωσε αποδεκτή τιμή
-                    try {  //  και δε προκλήθηκε κάποιο exception και αν συνέβησε κάτι τέτοιο ξαναζητάω από το χρήστη να μου δώσει μία αποδετή τιμή
+        System.out.printf("Please enter \"1\" or \"2\" to choose an option:\n1) MAIN MENU\n2) SEARCH BAR\n");  //  Δείνω την επίλογη στο χρήστη να επιλέξει αν θέλει να βρεί το κομμάτι 
+        do {
+            c = 0;                                                                                                     //  που τον ενδιαφέρει μέσω αναζήτησης η από το προσχεδιασμένο μενού επιλογών
+            try {
+                key1 = input.nextInt();  // Διαβάζω την επιλογή του χρήστη
+            } catch (InputMismatchException e) {  // Ελέγχω αν ο χρήστεις έδωσε κάποια μεταβλητή διαφορετικού τύπου από integer
+                System.out.printf("ERROR: Inappropriate argument passed into the system\nplease enter one " + 
+                "of the accepted values as following:\n \"1\" or\"2\"\n");
+                input.nextLine();
+                c = 1;
+            }
+            if (key1 != 1 && key1 != 2) {  // Ελέγχω αν ο χρήστης έδωσε αποδεκτή τιμή
+                System.out.printf("Please enter one of the accepted values ass following:\n \"1\" or\"2\"\n");
+                c = 1;
+            } 
+        } while (c == 1); //  Επαναλαμβάνω την διαδηκασία μέχρι ο χρήστης να δώσει μία αποδεκτή τιμή
+        String key3;  //  Oρισμός της μεταβλητής key3 στην οποία αποθηκέυετε η 3η επιλογή του χρήστη εάν χριαστεί
+        Scanner k = new Scanner(System.in);    
+        if (key1 == 1) {  //  Εάν επέλεξε την πρώτη επιλογή του εμφανίζει το πρώτο μενού
+            int key2 = 0;  //  Ορίζω την μεταβλητή στην οποία θα αποθηκευτεί η 2η επιλογή τοου χρήστη
+            System.out.printf("Please enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\" to select a category:\n" +
+            "1) STEERING PARTS\n2) CLUTCH PARTS\n3) ENGINE PARTS\n4) PROPELLER SHAFT\n5) BRAKE PARTS\n6) EXTRA\n");  //  Εμφανίζω τις κατηγορίες στις οποίες χωρίζονται τα ανταλακτικά 
+            do {  //  Ελεγχώ με αντίστοιχω τρόπο όπως και παραπάνω ότι ο χρήστης έδωσε αποδεκτή τιμή
+                try {  //  και δε προκλήθηκε κάποιο exception και αν συνέβησε κάτι τέτοιο ξαναζητάω από το χρήστη να μου δώσει μία αποδετή τιμή
                     key2 = input.nextInt();
                     } catch (InputMismatchException e) {
                     System.out.printf("ERROR: Inappropriate argument passed into the system\nplease enter one " + 
@@ -352,127 +352,127 @@ public class App
                         "\"1\", \"2\", \"3\", \"4\", \"5\", \"6\"");
                     }
                 }
-                while (key2 < 1 || key2 > 6);
-                System.out.println("Please enter the number of the part you want to select.");
-                Scanner q = new Scanner(System.in);  //  Δημιουργώ ένα αντικείμενο της Scanner ώστε να διαβάσω την τρίτη επιλογή του χρήστη
-                if (key2 == 1) {
-                     System.out.println("1.1 UPPER CONTROL ARM\n1.2 UPPER BALL JOINT\n1.3 COIL SPRING\n" +  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 1η κατηγορία
-                    "1.4 SNOCK ABSORBER\n1.5 LOWER BALL JOINT\n1.6 LOWER CONTROL ARM\n" +
-                    "1.7 CONTROL ARM BUSHINGS\n1.8 STABILIZER LINK\n1.9 IDLER ARM\n" +
-                    "1.10 INNER TIE-ROD END\n1.11 CENTER LINK\n1.12 PITMAN ARM\n" +
-                    "1.13 ADJUSTING SLEEVE\n1.14 OUTER TIE-ROD END\n1.15 STEERING KNUCKLE\n" +
-                    "1.16 POWER STEERING PUMP\n1.17 POWER STEERING GEARBOX\n" +
-                    "1.18 ANTI-SWAY BAR\n1.19 BALL JOINT\n1.20 UPPER MOUNTING PLATE-BEARING\n" +
-                    "1.21 MACPHERSON STRUT\n1.22 BELLOWS\n1.23 RACK-PINION UNIT\n1.24 RACK-PINION BUSHINGS\n" +
-                    "1.25 INNER SCOKET ASSEMBLY\n1.26 WHEEL HUB\n1.27 WHEEL BEARING\n1.28 POWER STEERING");
-                }else if (key2 == 2) {
-                    System.out.println("2.1 SPIGOT BEARING\n2.2 RETAINING SPRING WITH PREFORMED FINGERS\n" +  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 2η κατηγορία
-                    "2.3 RELEAS RING\n2.4 RETAINING SPRING\n2.5 BALL PIN FOR CLUCH FORK\n2.6 FLYWHEEL\n" +
-                    "2.7 DRIVE DISC\n2.8 PRESSURE PLATE\n2.9 INNER FULCRUM RING\n2.10 OUTER FULCRUM RING" +
-                    "2.11 CLUTCH COVER\n2.12 RELEASE FORK\n2.13 RETURN SPRING OF RELEASE FORK\n2.14 RELEASE BEARING" +
-                    "2.15 DIAPHRAGM SPRING\n2.16 PILOT BUSHING\n2.17 BELLHOUSING");
-                }else if (key2 == 3) {
-                    System.out.println("3.1 FUEL PUMP\n3.2 CYLINDER HEAD COVER\n3.3 GASKET\n" +  //  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 3η κατηγορία
-                    "3.4 THERMOSTAT COVER AND GASKET\n3.5 THERMOSTAT\n 3.6 HEAT GAUGE UNIT\n" + 
-                    "3.7 BRACKET\n3.8 ROCKER ARM AND SHAFT ASSEMBLE\n3.9 ROCKER ARM\n" + 
-                    "3.10 ROCKER ARM SPRING\n3.11 HYDRAULIC LASH ADJUSTSTER\n3.12 CAMSHAFT PULLEY\n" + 
-                    "3.13 THRUST PLATE\n3.14 CAMSHAFT\n3.15 CYLINDER HEAD BOLTS\n3.16 CYLINDER HEAD\n" + 
-                    "3.17 CYLINDER HEAD GASKET\n3.18 VALVE SPRING\n3.19 VALVE KEEPER\n3.20 VALVE SPRING SEAT UPPER\n" + 
-                    "3.21 VALVE SPRING SEAT LOWER\n3.22 VALVE\n3.23 VALVE SEAL\n3.24 VALVE GUIDE ***\n3.25 CAMSHAFT OIL SEAL\n" + 
-                    "3.26 FUEL PRESSURE REGULATOR\n3.27 RADIATOR\n3.28 SORT BLOCK\n3.29 PISTON RING(NO.1 COMPRESSION)\n3.30 PISTON RING (NO.2 COMPRESSION)\n" + 
-                    "3.31 PISTON RING(SIDE RAIL AND EXPANDER)***\n3.32 SNAP RING\n3.33 PISTON PIN\n3.34 CONNECTING ROD BUSHING\n3.35 CONNECTING ROD\n" + 
-                    "3.36 CONNECTING ROD BEARING\n3.37 CONNECTING ROD CAP\n3.38 ENGINE COOLANT DRAIN PLUG\n3.39 WATER BYPASS HOSE\n3.40 WATER PUMP\n" + 
-                    "3.41 O RING\n3.42 OIL PUMP\n3.43 OIL SEAL\n3.44 REAR OIL SEAL RATAINER\n3.45 KNOCK SENSOR 1\n3.46 KNOCK SENSOR 2\n3.47 FUEL PIPE SUPPORT\n" + 
-                    "3.48 UNION NUT\n3.49 OIL PRESSURE SWICH\n3.50 GENERATOR\n3.51 IDLER PULLER\n3.52 CRANKSHAFT OIL SEAL\n3.53 CRANKSHAFT\n3.54 CRANKSHAFT THRUST WASHER\n" + 
-                    "3.55 MAIN BEARING\n3.56 MAIN BEARING CAP\n3.57 LH MOUNTING BRACKET AND INSULATOR ASSEMBLY\n3.58 OIL FILTER AND BRACKET ASSEMBLY\n3.59 COIL\n" + 
-                    "3.60 TENSIONING RAIL\n3.61 BALANCE SHAFT CHAIN TENIONING\n3.62 COLLAR BOLT TENSIONING RAIL\n3.63 CHAIN SPROCKET OIL PUMP\n3.64 TENSIONING RAIL OIL PUMP\n" + 
-                    "3.65 IDLER\n3.66 CAMSHAFT PULLEY\n3.67 CRANKSHAFT PULLEY");  
-                }else if (key2 == 4) {
-                    System.out.println("4.1 FLANGE YOKE\n4.2 U-JOINT BEARING PLATE STYLE\n4.3 SLIP YOKE BP STYLE\n4.4 TUBE\n" +  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 4η κατηγορία
-                    "4.5 TUBE YOKE\n4.6 END YOKE\n4.7 MIDSHIP SHAFT\n4.8 CENTER BEARING\n4.9 U-JOINT\n" + 
-                    "4.10 DIFFERENTIAL\n4.11 AXLE\n4.12 CARRIER\n4.13 RING GEAR\n4.14 AXLE SHAFT SIDE GEAR\n" + 
-                    "4.15 AXLE SHAFT\n4.16 AXLE HOUSING\n4.17 PINION GEAR\n4.18 PINION SHAFT\n4.19 FUEL INJECTOR\n" + 
-                    "4.20 OIL PAN\n4.21 OIL PAN BAFFLE PLATE\n4.22 OIL STRAINER\n4.23 OIL PAN\n4.24 DRAIN PLUG\n" + 
-                    "4.25 SPARK PLUG\n4.26 EXHAUST MANIFOLD\n4.27 PRESSURE RELIEF VALUE\n4.28 INTAKE MANIFOLD\n" + 
-                    "4.29 INTATE MANIFOLD GASKET\n4.30 EXHAUST MANIFOLD GASKET\n4.31 RUBBER GROMMETS\n4.32 MAIN SEAL\n" + 
-                    "4.33 CAMSHAFT  FRONT OIL SEALS\n4.34 CYLINDER HEAD GASKET\n4.35 CRANK GEAR IOL SEAL\n4.36 OIL PAN GASKET\n" +
-                    "4.37 FRONT CRANK OIL SEAL\n4.38 WATER PUMP GASKET\n4.39 TIMING BELT DRIVE PULLEY\n4.40 DISTRIBUTOR O-RING\n" +
-                    "4.41 CAMS\n4.42 TIMING BELT\n4.43 TIMING CHAIN\n4.44 SLIDE RAIL TIMING GEAR\n4.45 CHAIN SPROCKET EXHAUST CAMSHAFT\n" +
-                    "4.46 COLLAR BOLT TENSIONING RAILS\n4.47 TENSIONING RAIL TIMING GEAR\n4.48 CHAIN SPROCKET INA INTAKE CAMSHAFT ADJUSTER\n" +
-                    "4.49 GUIDE RAIL TIMING GEAR\n4.50 HYDRAULIC TENSIONER CAMSHAFT CHAIN DRIVE\n4.51 FUEL PUMP ASSEMBLE\n4.52 UNIVERSAL JOINT\n" +
-                    "4.53 DIFFERENTIAL SIDE GEAR\n4.54 SIDE GEAR\n4.55 DIFFERENTIAL CASE\n4.56 BEARING CAP\n4.57 AXLE HOUSING\n4.58 PINION GEAR\n" +
-                    "4.59 RING GEAR\n4.60 TRANSMISSION");
-                }else if (key2 == 5) {
-                    System.out.println("5.1 PRIMARY RETURN SPRING\n5.2 PRIMARY SHOE\n5.3 SHOE HOLD-DOWN\n5.4 PARKING BRAKE CABLE\n5.5 ADJUSTER LEVER SPRING\n" + //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 5η κατηγορία
-                    "5.6 BACKING PLATE\n5.7 SECONDARY SHOE RETURN SERING\n5.8 WHEEL CYLINDER ASSEMBLY\n5.9 GEBLE GUIDE\n5.10 PARKING BRAKE STRUT\n" +
-                    "5.11 PARKING BRAKE LEVER\n5.12 ADJUSTING CABLE\n5.13 SECONDARY SHOE\n5.14 ADJUSTING LEVER\n5.15 ADJUSTING ASSEMBLY\n" + 
-                    "5.16 BLEEDER SCREW\n5.17 CALIPER\n5.18 DUST BOOT\n5.19 PISTON\n5.20 BRAKEPADS\n5.21 ANTI-RATTLE CLIPS\n5.22 ROTOR\n" + 
-                    "5.23 PISTON RING\n5.24 LOCK PIN\n5.25 PAD CLIP\n5.26 SHIM\n5.27 PIN BOOTS\n5.28 GUIDEPIN\n5.29 CYLINDER BODY\n" + 
-                    "5.30 BLEEDER CAP\n5.31 MOUNTING BRACKET");
-                }else if (key2 == 6) {
-                    System.out.println("6.1 THERMOSTAT\n6.2 RESERVOIR TANK\n6.3 FUEL TANK\n6.4 FUEL TANK PRESSURE SENSOR\n6.5 OXYGEN SENSOR\n" +  //  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 6η κατηγορία
-                    "6.6 AIR INJECTION CHECK VALVE\n6.7 EGR VALVE\n6.8 PURGE\n6.9 FUEL FILTER\n6.10 FUEL TANK VENT\n6.11 FUEL ISOLATION VALVE\n" +
-                    "6.12 HIGH PRESSURE PUMP\n6.13 FUEL RAIL\n6.14 FUEL GAUGE\n6.15 HEATER\n6.16 HEATER BLOWER FAN\n6.17 DRAIN TAP\n" +
-                    "6.18 COOLANT TEMPERATURE SENSOR\n6.19 HEATER CONTROL VALVE\n6.20 BLOWER MOTOR\n6.21 OVERFLOW RECOVERY TANK HOSE\n" +
-                    "6.22 COOLANT RESERVOIR\n6.23 THROTTLE BODY\n6.24 COOLANT FAN \n6.25 RADIATOR SHROUD - FAN SHROUD\n6.26 FUEL ACCUMULATOR\n" +
-                    "6.27 MAF SENSOR\n6.28 MAP SENSOR\n6.29 IAT SENSOR\n6.30 O2 SENSOR\n6.31 NOX SENSOR\n6.32 EGT SENSOR\n6.33 EGR SENSOR\n" + 
-                    "6.34 DISTRIBUTOR\n6.35 BATTERY\n6.36 WARM-UP REGULATOR\n6.37 CHOKE VALVE\n6.38 OIL CATCH CAN\n6.39 DOWNPIPE\n6.40 IAC VALVE\n" + 
-                    "6.41 VSV FOR ACIS\n6.42 IGNITER\n6.43 ENGINE NOUNT\n6.44 CIRCUIT\n6.45 CLUTCH CYLINDER\n6.46 BLOW OFF VLAVE\n6.47 INTERCOOLER\n" +
-                    "6.48 TURBO\n6.49 OIL RETURN GASKET\n6.50 BOOST SOLENOID VALVE");
-                }  
-                do {
-                    key3 = q.nextLine();  //  Διαβάζω την επιλογή του χρήστη
-                } while (!(key3.equals("1.1")) && !(key3.equals("1.2")) && !(key3.equals("1.3")) && !(key3.equals("1.4")) && !(key3.equals("1.5")) &&
-                         !(key3.equals("1.6")) && !(key3.equals("1.7")) && !(key3.equals("1.8")) && !(key3.equals("1.9")) && !(key3.equals("1.10")) &&
-                         !(key3.equals("1.11")) && !(key3.equals("1.12")) && !(key3.equals("1.13")) && !(key3.equals("1.14")) && !(key3.equals("1.15")) &&
-                         !(key3.equals("1.16")) && !(key3.equals("1.17")) && !(key3.equals("1.18")) && !(key3.equals("1.19")) && !(key3.equals("1.20")) &&
-                         !(key3.equals("1.21")) && !(key3.equals("1.22")) && !(key3.equals("1.23")) && !(key3.equals("")) && !(key3.equals("1.24")) &&
-                         !(key3.equals("1.25")) && !(key3.equals("1.26")) && !(key3.equals("1.27")) && !(key3.equals("1.28")) && !(key3.equals("2.1")) &&
-                         !(key3.equals("2.2")) && !(key3.equals("2.3")) && !(key3.equals("2.4")) && !(key3.equals("2.5")) && !(key3.equals("2.6")) &&
-                         !(key3.equals("2.7")) && !(key3.equals("2.8")) && !(key3.equals("2.9")) && !(key3.equals("2.10")) && !(key3.equals("2.11")) &&
-                         !(key3.equals("2.12")) && !(key3.equals("2.13")) && !(key3.equals("2.14")) && !(key3.equals("2.15")) && !(key3.equals("2.16")) &&
-                         !(key3.equals("2.17")) && !(key3.equals("3.1")) && !(key3.equals("3.2")) && !(key3.equals("3.3")) && !(key3.equals("3.4")) &&
-                         !(key3.equals("3.5")) && !(key3.equals("3.6")) && !(key3.equals("3.7")) && !(key3.equals("3.8")) && !(key3.equals("3.9")) &&
-                         !(key3.equals("3.10")) && !(key3.equals("3.11")) && !(key3.equals("3.12")) && !(key3.equals("3.13")) && !(key3.equals("3.14")) &&
-                         !(key3.equals("3.15")) && !(key3.equals("3.16")) && !(key3.equals("3.17")) && !(key3.equals("3.18")) && !(key3.equals("3.19")) &&
-                         !(key3.equals("3.20")) && !(key3.equals("3.21")) && !(key3.equals("3.22")) && !(key3.equals("3.23")) && !(key3.equals("3.24")) &&
-                         !(key3.equals("3.25")) && !(key3.equals("3.26")) && !(key3.equals("3.27")) && !(key3.equals("3.28")) && !(key3.equals("3.29")) &&
-                         !(key3.equals("3.30")) && !(key3.equals("3.31")) && !(key3.equals("3.32")) && !(key3.equals("3.33")) && !(key3.equals("3.34")) &&
-                         !(key3.equals("3.35")) && !(key3.equals("3.36")) && !(key3.equals("3.37")) && !(key3.equals("3.38")) && !(key3.equals("3.39")) &&
-                         !(key3.equals("3.40")) && !(key3.equals("3.41")) && !(key3.equals("3.42")) && !(key3.equals("3.43")) && !(key3.equals("3.44")) &&
-                         !(key3.equals("3.45")) && !(key3.equals("3.46")) && !(key3.equals("3.47")) && !(key3.equals("3.48")) && !(key3.equals("3.49")) &&
-                         !(key3.equals("3.50")) && !(key3.equals("3.51")) && !(key3.equals("3.52")) && !(key3.equals("3.53")) && !(key3.equals("3.54")) &&
-                         !(key3.equals("3.55")) && !(key3.equals("3.56")) && !(key3.equals("3.57")) && !(key3.equals("3.58")) && !(key3.equals("3.58")) &&
-                         !(key3.equals("3.59")) && !(key3.equals("3.60")) && !(key3.equals("3.61")) && !(key3.equals("3.62")) && !(key3.equals("3.63")) &&
-                         !(key3.equals("3.64")) && !(key3.equals("3.65")) && !(key3.equals("3.66")) && !(key3.equals("3.67")) && !(key3.equals("4.1")) &&
-                         !(key3.equals("4.2")) && !(key3.equals("4.3")) && !(key3.equals("4.4")) && !(key3.equals("4.5")) && !(key3.equals("4.6")) &&
-                         !(key3.equals("4.7")) && !(key3.equals("4.8")) && !(key3.equals("4.9")) && !(key3.equals("4.10")) && !(key3.equals("4.11")) &&
-                         !(key3.equals("4.12")) && !(key3.equals("4.13")) && !(key3.equals("4.14")) && !(key3.equals("4.15")) && !(key3.equals("4.16")) &&
-                         !(key3.equals("4.17")) && !(key3.equals("4.18")) && !(key3.equals("4.19")) && !(key3.equals("4.20")) && !(key3.equals("4.21")) &&
-                         !(key3.equals("4.22")) && !(key3.equals("4.23")) && !(key3.equals("4.24")) && !(key3.equals("4.25")) && !(key3.equals("4.26")) && !(key3.equals("4.27")) &&
-                         !(key3.equals("4.28")) && !(key3.equals("4.29")) && !(key3.equals("4.30")) && !(key3.equals("4.31")) && !(key3.equals("4.32")) && !(key3.equals("4.33")) &&
-                         !(key3.equals("4.34")) && !(key3.equals("4.35")) && !(key3.equals("4.36")) && !(key3.equals("4.37")) && !(key3.equals("4.38")) && !(key3.equals("4.39")) &&
-                         !(key3.equals("4.40")) && !(key3.equals("4.41")) && !(key3.equals("4.42")) && !(key3.equals("4.43")) && !(key3.equals("4.44")) && !(key3.equals("4.45")) &&
-                         !(key3.equals("4.46")) && !(key3.equals("4.47")) && !(key3.equals("4.48")) && !(key3.equals("4.49")) && !(key3.equals("4.50")) && !(key3.equals("4.51")) &&
-                         !(key3.equals("4.52")) && !(key3.equals("4.53")) && !(key3.equals("4.54")) && !(key3.equals("4.55")) && !(key3.equals("4.56")) && !(key3.equals("4.57")) &&
-                         !(key3.equals("4.58")) && !(key3.equals("4.59")) && !(key3.equals("4.60")) && !(key3.equals("5.1")) && !(key3.equals("5.2")) && !(key3.equals("5.3")) &&
-                         !(key3.equals("5.4")) && !(key3.equals("5.5")) && !(key3.equals("5.6")) && !(key3.equals("5.7")) && !(key3.equals("5.8")) && !(key3.equals("5.9")) &&
-                         !(key3.equals("5.10")) && !(key3.equals("5.11")) && !(key3.equals("5.12")) && !(key3.equals("5.13")) && !(key3.equals("5.14")) &&
-                         !(key3.equals("5.15")) && !(key3.equals("5.16")) && !(key3.equals("5.17")) && !(key3.equals("5.18")) && !(key3.equals("5.19")) &&
-                         !(key3.equals("5.20")) && !(key3.equals("5.21")) && !(key3.equals("5.22")) && !(key3.equals("5.23")) && !(key3.equals("5.24")) &&
-                         !(key3.equals("5.25")) && !(key3.equals("5.26")) && !(key3.equals("5.27")) && !(key3.equals("5.28")) && !(key3.equals("5.29")) &&
-                         !(key3.equals("5.30")) && !(key3.equals("5.31")) && !(key3.equals("6.1")) && !(key3.equals("6.2")) && !(key3.equals("6.3")) &&
-                         !(key3.equals("6.4")) && !(key3.equals("6.5")) && !(key3.equals("6.6")) && !(key3.equals("6.7")) && !(key3.equals("6.8")) &&
-                         !(key3.equals("6.9")) && !(key3.equals("6.10")) && !(key3.equals("6.11")) && !(key3.equals("6.12")) && !(key3.equals("6.13")) &&
-                         !(key3.equals("6.14")) && !(key3.equals("6.15")) && !(key3.equals("6.16")) && !(key3.equals("6.17")) && !(key3.equals("6.18")) &&
-                         !(key3.equals("6.19")) && !(key3.equals("6.20")) && !(key3.equals("6.21")) && !(key3.equals("6.22")) && !(key3.equals("6.23")) &&
-                         !(key3.equals("6.24")) && !(key3.equals("6.25")) && !(key3.equals("6.26")) && !(key3.equals("6.27")) && !(key3.equals("6.28")) &&
-                         !(key3.equals("6.29")) && !(key3.equals("6.30")) && !(key3.equals("6.31")) && !(key3.equals("6.32")) && !(key3.equals("6.33")) &&
-                         !(key3.equals("6.34")) && !(key3.equals("6.35")) && !(key3.equals("6.36")) && !(key3.equals("6.37")) && !(key3.equals("6.38")) &&
-                         !(key3.equals("6.39")) && !(key3.equals("6.40")) && !(key3.equals("6.41")) && !(key3.equals("6.42")) && !(key3.equals("6.43")) &&
-                         !(key3.equals("6.44")) && !(key3.equals("6.45")) && !(key3.equals("6.46")) && !(key3.equals("6.47")) && !(key3.equals("6.48")) &&
-                         !(key3.equals("6.49")) && !(key3.equals("6.50")));  //  Ελέγχω ότι η τιμή που έδωσε ήταν αποδεκτή
-                         q.close();  //  Κλήνω το Scanner q
+            while (key2 < 1 || key2 > 6);
+            System.out.println("Please enter the number of the part you want to select.");
+            Scanner q = new Scanner(System.in);  //  Δημιουργώ ένα αντικείμενο της Scanner ώστε να διαβάσω την τρίτη επιλογή του χρήστη
+            if (key2 == 1) {
+                System.out.println("1.1 UPPER CONTROL ARM\n1.2 UPPER BALL JOINT\n1.3 COIL SPRING\n" +  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 1η κατηγορία
+                "1.4 SNOCK ABSORBER\n1.5 LOWER BALL JOINT\n1.6 LOWER CONTROL ARM\n" +
+                "1.7 CONTROL ARM BUSHINGS\n1.8 STABILIZER LINK\n1.9 IDLER ARM\n" +
+                "1.10 INNER TIE-ROD END\n1.11 CENTER LINK\n1.12 PITMAN ARM\n" +
+                "1.13 ADJUSTING SLEEVE\n1.14 OUTER TIE-ROD END\n1.15 STEERING KNUCKLE\n" +
+                "1.16 POWER STEERING PUMP\n1.17 POWER STEERING GEARBOX\n" +
+                "1.18 ANTI-SWAY BAR\n1.19 BALL JOINT\n1.20 UPPER MOUNTING PLATE-BEARING\n" +
+                "1.21 MACPHERSON STRUT\n1.22 BELLOWS\n1.23 RACK-PINION UNIT\n1.24 RACK-PINION BUSHINGS\n" +
+                "1.25 INNER SCOKET ASSEMBLY\n1.26 WHEEL HUB\n1.27 WHEEL BEARING\n1.28 POWER STEERING");
+            }else if (key2 == 2) {
+                System.out.println("2.1 SPIGOT BEARING\n2.2 RETAINING SPRING WITH PREFORMED FINGERS\n" +  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 2η κατηγορία
+                "2.3 RELEAS RING\n2.4 RETAINING SPRING\n2.5 BALL PIN FOR CLUCH FORK\n2.6 FLYWHEEL\n" +
+                "2.7 DRIVE DISC\n2.8 PRESSURE PLATE\n2.9 INNER FULCRUM RING\n2.10 OUTER FULCRUM RING" +
+                "2.11 CLUTCH COVER\n2.12 RELEASE FORK\n2.13 RETURN SPRING OF RELEASE FORK\n2.14 RELEASE BEARING" +
+                "2.15 DIAPHRAGM SPRING\n2.16 PILOT BUSHING\n2.17 BELLHOUSING");
+            }else if (key2 == 3) {
+                System.out.println("3.1 FUEL PUMP\n3.2 CYLINDER HEAD COVER\n3.3 GASKET\n" +  //  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 3η κατηγορία
+                "3.4 THERMOSTAT COVER AND GASKET\n3.5 THERMOSTAT\n 3.6 HEAT GAUGE UNIT\n" + 
+                "3.7 BRACKET\n3.8 ROCKER ARM AND SHAFT ASSEMBLE\n3.9 ROCKER ARM\n" + 
+                "3.10 ROCKER ARM SPRING\n3.11 HYDRAULIC LASH ADJUSTSTER\n3.12 CAMSHAFT PULLEY\n" + 
+                "3.13 THRUST PLATE\n3.14 CAMSHAFT\n3.15 CYLINDER HEAD BOLTS\n3.16 CYLINDER HEAD\n" + 
+                "3.17 CYLINDER HEAD GASKET\n3.18 VALVE SPRING\n3.19 VALVE KEEPER\n3.20 VALVE SPRING SEAT UPPER\n" + 
+                "3.21 VALVE SPRING SEAT LOWER\n3.22 VALVE\n3.23 VALVE SEAL\n3.24 VALVE GUIDE ***\n3.25 CAMSHAFT OIL SEAL\n" + 
+                "3.26 FUEL PRESSURE REGULATOR\n3.27 RADIATOR\n3.28 SORT BLOCK\n3.29 PISTON RING(NO.1 COMPRESSION)\n3.30 PISTON RING (NO.2 COMPRESSION)\n" + 
+                "3.31 PISTON RING(SIDE RAIL AND EXPANDER)***\n3.32 SNAP RING\n3.33 PISTON PIN\n3.34 CONNECTING ROD BUSHING\n3.35 CONNECTING ROD\n" + 
+                "3.36 CONNECTING ROD BEARING\n3.37 CONNECTING ROD CAP\n3.38 ENGINE COOLANT DRAIN PLUG\n3.39 WATER BYPASS HOSE\n3.40 WATER PUMP\n" + 
+                "3.41 O RING\n3.42 OIL PUMP\n3.43 OIL SEAL\n3.44 REAR OIL SEAL RATAINER\n3.45 KNOCK SENSOR 1\n3.46 KNOCK SENSOR 2\n3.47 FUEL PIPE SUPPORT\n" + 
+                "3.48 UNION NUT\n3.49 OIL PRESSURE SWICH\n3.50 GENERATOR\n3.51 IDLER PULLER\n3.52 CRANKSHAFT OIL SEAL\n3.53 CRANKSHAFT\n3.54 CRANKSHAFT THRUST WASHER\n" + 
+                "3.55 MAIN BEARING\n3.56 MAIN BEARING CAP\n3.57 LH MOUNTING BRACKET AND INSULATOR ASSEMBLY\n3.58 OIL FILTER AND BRACKET ASSEMBLY\n3.59 COIL\n" + 
+                "3.60 TENSIONING RAIL\n3.61 BALANCE SHAFT CHAIN TENIONING\n3.62 COLLAR BOLT TENSIONING RAIL\n3.63 CHAIN SPROCKET OIL PUMP\n3.64 TENSIONING RAIL OIL PUMP\n" + 
+                "3.65 IDLER\n3.66 CAMSHAFT PULLEY\n3.67 CRANKSHAFT PULLEY");  
+            }else if (key2 == 4) {
+                System.out.println("4.1 FLANGE YOKE\n4.2 U-JOINT BEARING PLATE STYLE\n4.3 SLIP YOKE BP STYLE\n4.4 TUBE\n" +  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 4η κατηγορία
+                "4.5 TUBE YOKE\n4.6 END YOKE\n4.7 MIDSHIP SHAFT\n4.8 CENTER BEARING\n4.9 U-JOINT\n" + 
+                "4.10 DIFFERENTIAL\n4.11 AXLE\n4.12 CARRIER\n4.13 RING GEAR\n4.14 AXLE SHAFT SIDE GEAR\n" + 
+                "4.15 AXLE SHAFT\n4.16 AXLE HOUSING\n4.17 PINION GEAR\n4.18 PINION SHAFT\n4.19 FUEL INJECTOR\n" + 
+                "4.20 OIL PAN\n4.21 OIL PAN BAFFLE PLATE\n4.22 OIL STRAINER\n4.23 OIL PAN\n4.24 DRAIN PLUG\n" + 
+                "4.25 SPARK PLUG\n4.26 EXHAUST MANIFOLD\n4.27 PRESSURE RELIEF VALUE\n4.28 INTAKE MANIFOLD\n" + 
+                "4.29 INTATE MANIFOLD GASKET\n4.30 EXHAUST MANIFOLD GASKET\n4.31 RUBBER GROMMETS\n4.32 MAIN SEAL\n" + 
+                "4.33 CAMSHAFT  FRONT OIL SEALS\n4.34 CYLINDER HEAD GASKET\n4.35 CRANK GEAR IOL SEAL\n4.36 OIL PAN GASKET\n" +
+                "4.37 FRONT CRANK OIL SEAL\n4.38 WATER PUMP GASKET\n4.39 TIMING BELT DRIVE PULLEY\n4.40 DISTRIBUTOR O-RING\n" +
+                "4.41 CAMS\n4.42 TIMING BELT\n4.43 TIMING CHAIN\n4.44 SLIDE RAIL TIMING GEAR\n4.45 CHAIN SPROCKET EXHAUST CAMSHAFT\n" +
+                "4.46 COLLAR BOLT TENSIONING RAILS\n4.47 TENSIONING RAIL TIMING GEAR\n4.48 CHAIN SPROCKET INA INTAKE CAMSHAFT ADJUSTER\n" +
+                "4.49 GUIDE RAIL TIMING GEAR\n4.50 HYDRAULIC TENSIONER CAMSHAFT CHAIN DRIVE\n4.51 FUEL PUMP ASSEMBLE\n4.52 UNIVERSAL JOINT\n" +
+                "4.53 DIFFERENTIAL SIDE GEAR\n4.54 SIDE GEAR\n4.55 DIFFERENTIAL CASE\n4.56 BEARING CAP\n4.57 AXLE HOUSING\n4.58 PINION GEAR\n" +
+                "4.59 RING GEAR\n4.60 TRANSMISSION");
+            }else if (key2 == 5) {
+                System.out.println("5.1 PRIMARY RETURN SPRING\n5.2 PRIMARY SHOE\n5.3 SHOE HOLD-DOWN\n5.4 PARKING BRAKE CABLE\n5.5 ADJUSTER LEVER SPRING\n" + //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 5η κατηγορία
+                "5.6 BACKING PLATE\n5.7 SECONDARY SHOE RETURN SERING\n5.8 WHEEL CYLINDER ASSEMBLY\n5.9 GEBLE GUIDE\n5.10 PARKING BRAKE STRUT\n" +
+                "5.11 PARKING BRAKE LEVER\n5.12 ADJUSTING CABLE\n5.13 SECONDARY SHOE\n5.14 ADJUSTING LEVER\n5.15 ADJUSTING ASSEMBLY\n" + 
+                "5.16 BLEEDER SCREW\n5.17 CALIPER\n5.18 DUST BOOT\n5.19 PISTON\n5.20 BRAKEPADS\n5.21 ANTI-RATTLE CLIPS\n5.22 ROTOR\n" + 
+                "5.23 PISTON RING\n5.24 LOCK PIN\n5.25 PAD CLIP\n5.26 SHIM\n5.27 PIN BOOTS\n5.28 GUIDEPIN\n5.29 CYLINDER BODY\n" + 
+                "5.30 BLEEDER CAP\n5.31 MOUNTING BRACKET");
+            }else if (key2 == 6) {
+                System.out.println("6.1 THERMOSTAT\n6.2 RESERVOIR TANK\n6.3 FUEL TANK\n6.4 FUEL TANK PRESSURE SENSOR\n6.5 OXYGEN SENSOR\n" +  //  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 6η κατηγορία
+                "6.6 AIR INJECTION CHECK VALVE\n6.7 EGR VALVE\n6.8 PURGE\n6.9 FUEL FILTER\n6.10 FUEL TANK VENT\n6.11 FUEL ISOLATION VALVE\n" +
+                "6.12 HIGH PRESSURE PUMP\n6.13 FUEL RAIL\n6.14 FUEL GAUGE\n6.15 HEATER\n6.16 HEATER BLOWER FAN\n6.17 DRAIN TAP\n" +
+                "6.18 COOLANT TEMPERATURE SENSOR\n6.19 HEATER CONTROL VALVE\n6.20 BLOWER MOTOR\n6.21 OVERFLOW RECOVERY TANK HOSE\n" +
+                "6.22 COOLANT RESERVOIR\n6.23 THROTTLE BODY\n6.24 COOLANT FAN \n6.25 RADIATOR SHROUD - FAN SHROUD\n6.26 FUEL ACCUMULATOR\n" +
+                "6.27 MAF SENSOR\n6.28 MAP SENSOR\n6.29 IAT SENSOR\n6.30 O2 SENSOR\n6.31 NOX SENSOR\n6.32 EGT SENSOR\n6.33 EGR SENSOR\n" + 
+                "6.34 DISTRIBUTOR\n6.35 BATTERY\n6.36 WARM-UP REGULATOR\n6.37 CHOKE VALVE\n6.38 OIL CATCH CAN\n6.39 DOWNPIPE\n6.40 IAC VALVE\n" + 
+                "6.41 VSV FOR ACIS\n6.42 IGNITER\n6.43 ENGINE NOUNT\n6.44 CIRCUIT\n6.45 CLUTCH CYLINDER\n6.46 BLOW OFF VLAVE\n6.47 INTERCOOLER\n" +
+                "6.48 TURBO\n6.49 OIL RETURN GASKET\n6.50 BOOST SOLENOID VALVE");
+            }  
+            do {
+                key3 = q.nextLine();  //  Διαβάζω την επιλογή του χρήστη
+            } while (!(key3.equals("1.1")) && !(key3.equals("1.2")) && !(key3.equals("1.3")) && !(key3.equals("1.4")) && !(key3.equals("1.5")) &&
+                     !(key3.equals("1.6")) && !(key3.equals("1.7")) && !(key3.equals("1.8")) && !(key3.equals("1.9")) && !(key3.equals("1.10")) &&
+                     !(key3.equals("1.11")) && !(key3.equals("1.12")) && !(key3.equals("1.13")) && !(key3.equals("1.14")) && !(key3.equals("1.15")) &&
+                     !(key3.equals("1.16")) && !(key3.equals("1.17")) && !(key3.equals("1.18")) && !(key3.equals("1.19")) && !(key3.equals("1.20")) &&
+                     !(key3.equals("1.21")) && !(key3.equals("1.22")) && !(key3.equals("1.23")) && !(key3.equals("")) && !(key3.equals("1.24")) &&
+                     !(key3.equals("1.25")) && !(key3.equals("1.26")) && !(key3.equals("1.27")) && !(key3.equals("1.28")) && !(key3.equals("2.1")) &&
+                     !(key3.equals("2.2")) && !(key3.equals("2.3")) && !(key3.equals("2.4")) && !(key3.equals("2.5")) && !(key3.equals("2.6")) &&
+                     !(key3.equals("2.7")) && !(key3.equals("2.8")) && !(key3.equals("2.9")) && !(key3.equals("2.10")) && !(key3.equals("2.11")) &&
+                     !(key3.equals("2.12")) && !(key3.equals("2.13")) && !(key3.equals("2.14")) && !(key3.equals("2.15")) && !(key3.equals("2.16")) &&
+                     !(key3.equals("2.17")) && !(key3.equals("3.1")) && !(key3.equals("3.2")) && !(key3.equals("3.3")) && !(key3.equals("3.4")) &&
+                     !(key3.equals("3.5")) && !(key3.equals("3.6")) && !(key3.equals("3.7")) && !(key3.equals("3.8")) && !(key3.equals("3.9")) &&
+                     !(key3.equals("3.10")) && !(key3.equals("3.11")) && !(key3.equals("3.12")) && !(key3.equals("3.13")) && !(key3.equals("3.14")) &&
+                     !(key3.equals("3.15")) && !(key3.equals("3.16")) && !(key3.equals("3.17")) && !(key3.equals("3.18")) && !(key3.equals("3.19")) &&
+                     !(key3.equals("3.20")) && !(key3.equals("3.21")) && !(key3.equals("3.22")) && !(key3.equals("3.23")) && !(key3.equals("3.24")) &&
+                     !(key3.equals("3.25")) && !(key3.equals("3.26")) && !(key3.equals("3.27")) && !(key3.equals("3.28")) && !(key3.equals("3.29")) &&
+                     !(key3.equals("3.30")) && !(key3.equals("3.31")) && !(key3.equals("3.32")) && !(key3.equals("3.33")) && !(key3.equals("3.34")) &&
+                     !(key3.equals("3.35")) && !(key3.equals("3.36")) && !(key3.equals("3.37")) && !(key3.equals("3.38")) && !(key3.equals("3.39")) &&
+                     !(key3.equals("3.40")) && !(key3.equals("3.41")) && !(key3.equals("3.42")) && !(key3.equals("3.43")) && !(key3.equals("3.44")) &&
+                     !(key3.equals("3.45")) && !(key3.equals("3.46")) && !(key3.equals("3.47")) && !(key3.equals("3.48")) && !(key3.equals("3.49")) &&
+                     !(key3.equals("3.50")) && !(key3.equals("3.51")) && !(key3.equals("3.52")) && !(key3.equals("3.53")) && !(key3.equals("3.54")) &&
+                     !(key3.equals("3.55")) && !(key3.equals("3.56")) && !(key3.equals("3.57")) && !(key3.equals("3.58")) && !(key3.equals("3.58")) &&
+                     !(key3.equals("3.59")) && !(key3.equals("3.60")) && !(key3.equals("3.61")) && !(key3.equals("3.62")) && !(key3.equals("3.63")) &&
+                     !(key3.equals("3.64")) && !(key3.equals("3.65")) && !(key3.equals("3.66")) && !(key3.equals("3.67")) && !(key3.equals("4.1")) &&
+                     !(key3.equals("4.2")) && !(key3.equals("4.3")) && !(key3.equals("4.4")) && !(key3.equals("4.5")) && !(key3.equals("4.6")) &&
+                     !(key3.equals("4.7")) && !(key3.equals("4.8")) && !(key3.equals("4.9")) && !(key3.equals("4.10")) && !(key3.equals("4.11")) &&
+                     !(key3.equals("4.12")) && !(key3.equals("4.13")) && !(key3.equals("4.14")) && !(key3.equals("4.15")) && !(key3.equals("4.16")) &&
+                     !(key3.equals("4.17")) && !(key3.equals("4.18")) && !(key3.equals("4.19")) && !(key3.equals("4.20")) && !(key3.equals("4.21")) &&
+                     !(key3.equals("4.22")) && !(key3.equals("4.23")) && !(key3.equals("4.24")) && !(key3.equals("4.25")) && !(key3.equals("4.26")) && !(key3.equals("4.27")) &&
+                     !(key3.equals("4.28")) && !(key3.equals("4.29")) && !(key3.equals("4.30")) && !(key3.equals("4.31")) && !(key3.equals("4.32")) && !(key3.equals("4.33")) &&
+                     !(key3.equals("4.34")) && !(key3.equals("4.35")) && !(key3.equals("4.36")) && !(key3.equals("4.37")) && !(key3.equals("4.38")) && !(key3.equals("4.39")) &&
+                     !(key3.equals("4.40")) && !(key3.equals("4.41")) && !(key3.equals("4.42")) && !(key3.equals("4.43")) && !(key3.equals("4.44")) && !(key3.equals("4.45")) &&
+                     !(key3.equals("4.46")) && !(key3.equals("4.47")) && !(key3.equals("4.48")) && !(key3.equals("4.49")) && !(key3.equals("4.50")) && !(key3.equals("4.51")) &&
+                     !(key3.equals("4.52")) && !(key3.equals("4.53")) && !(key3.equals("4.54")) && !(key3.equals("4.55")) && !(key3.equals("4.56")) && !(key3.equals("4.57")) &&
+                     !(key3.equals("4.58")) && !(key3.equals("4.59")) && !(key3.equals("4.60")) && !(key3.equals("5.1")) && !(key3.equals("5.2")) && !(key3.equals("5.3")) &&
+                     !(key3.equals("5.4")) && !(key3.equals("5.5")) && !(key3.equals("5.6")) && !(key3.equals("5.7")) && !(key3.equals("5.8")) && !(key3.equals("5.9")) &&
+                     !(key3.equals("5.10")) && !(key3.equals("5.11")) && !(key3.equals("5.12")) && !(key3.equals("5.13")) && !(key3.equals("5.14")) &&
+                     !(key3.equals("5.15")) && !(key3.equals("5.16")) && !(key3.equals("5.17")) && !(key3.equals("5.18")) && !(key3.equals("5.19")) &&
+                     !(key3.equals("5.20")) && !(key3.equals("5.21")) && !(key3.equals("5.22")) && !(key3.equals("5.23")) && !(key3.equals("5.24")) &&
+                     !(key3.equals("5.25")) && !(key3.equals("5.26")) && !(key3.equals("5.27")) && !(key3.equals("5.28")) && !(key3.equals("5.29")) &&
+                     !(key3.equals("5.30")) && !(key3.equals("5.31")) && !(key3.equals("6.1")) && !(key3.equals("6.2")) && !(key3.equals("6.3")) &&
+                     !(key3.equals("6.4")) && !(key3.equals("6.5")) && !(key3.equals("6.6")) && !(key3.equals("6.7")) && !(key3.equals("6.8")) &&
+                     !(key3.equals("6.9")) && !(key3.equals("6.10")) && !(key3.equals("6.11")) && !(key3.equals("6.12")) && !(key3.equals("6.13")) &&
+                     !(key3.equals("6.14")) && !(key3.equals("6.15")) && !(key3.equals("6.16")) && !(key3.equals("6.17")) && !(key3.equals("6.18")) &&
+                     !(key3.equals("6.19")) && !(key3.equals("6.20")) && !(key3.equals("6.21")) && !(key3.equals("6.22")) && !(key3.equals("6.23")) &&
+                     !(key3.equals("6.24")) && !(key3.equals("6.25")) && !(key3.equals("6.26")) && !(key3.equals("6.27")) && !(key3.equals("6.28")) &&
+                     !(key3.equals("6.29")) && !(key3.equals("6.30")) && !(key3.equals("6.31")) && !(key3.equals("6.32")) && !(key3.equals("6.33")) &&
+                     !(key3.equals("6.34")) && !(key3.equals("6.35")) && !(key3.equals("6.36")) && !(key3.equals("6.37")) && !(key3.equals("6.38")) &&
+                     !(key3.equals("6.39")) && !(key3.equals("6.40")) && !(key3.equals("6.41")) && !(key3.equals("6.42")) && !(key3.equals("6.43")) &&
+                     !(key3.equals("6.44")) && !(key3.equals("6.45")) && !(key3.equals("6.46")) && !(key3.equals("6.47")) && !(key3.equals("6.48")) &&
+                     !(key3.equals("6.49")) && !(key3.equals("6.50")));  //  Ελέγχω ότι η τιμή που έδωσε ήταν αποδεκτή
+                q.close();  //  Κλήνω το Scanner q
             } else {  //  Εφόσον επέλεξε την αναζήτηση  
                 do {
                     System.out.println("Give the name of the part in capital letters");  //  Εμφανίζω τα κατάλληλα μηνύματα και ογηγείες
