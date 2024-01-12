@@ -1,3 +1,5 @@
+package gr.aueb.dmst.T21;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

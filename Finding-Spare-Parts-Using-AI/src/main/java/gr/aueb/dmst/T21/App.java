@@ -1,4 +1,4 @@
-//package gr.aueb.dmst.T21;
+package gr.aueb.dmst.T21;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
