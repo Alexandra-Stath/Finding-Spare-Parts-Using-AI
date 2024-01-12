@@ -4,13 +4,13 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App
-{   protected static String[] partsName = new String[253];
-    protected static String brand;
-    protected static int productionYear;
-    protected static String model;
+{   protected static String[] partsName = new String[253];  //  Ορισμός του πίνακα που περιέχει όλα τα μέλει (ανταλακτικά ενός αυτοκινήτου που έχουν μοναδικό κωδικό)
+    protected static String brand;  //  Ορισμός της μεταβλητής που περιέχει την μάρκα του αυτοκινήτου
+    protected static int productionYear; // Ορισμός της μεταβλητής που περιέχει την χρονολογία πααραγωγής του αυτοκινήτου
+    protected static String model;  //  Ορισμός της μεταβλητής που περιέχει το μοντέλο του αυτοκινήτου
 
-    public App() {
-        brand = "";
+    public App() {  //Ορισμός του κατασκευαστή της κλάσης ο οποίος γεμίζει τον πίνακα με της ονομασίες των μελών του αυτοκινήτου
+        brand = "";          
         productionYear = 0;
         model = "";
         partsName[0] = "1.1  UPPER CONTROL ARM";
@@ -269,25 +269,25 @@ public class App
     }
     public static void main( String args[]) throws InputMismatchException {
         
-        new App();
-        int key1 = 0;
-        Scanner input = new Scanner(System.in);
+        new App();  //  Φτιάχνω ένα αντικείμενο της κλάσης App ώστε να αποδοθούν οι τιμές που πρέπει στον πίνακα partsName
+        int key1 = 0;  //  Ορίζω το key1 στο οποίο θα αποθηκευτεί η πρώτη επηλογή του χρήστη
+        Scanner input = new Scanner(System.in);  //  Δημιουργώ ένα αντικείμενο της κλάσης Scanner ώστε να διαβάσω τα δεδομένα που ζητάω από το χρήστη
         System.out.println("Please enter the motor vehicle's Brand, model and year of production");
-        System.out.printf("Brand:");
-        int c = 0;
-        do {
-            if (c == 1) {
+        System.out.printf("Brand:");  // Ζητάω να μου δώσει τη μάρκα του αυτοκινήτου για το οποίο ενδιαφέρετε
+        int c = 0; // Αρχηκοποιό μία μεταβλητή που θα χρησιμοποιήσω για να ελεγχξω αν συνέβει κάποιο exception 
+        do {  // Χρησιμοποιώ μία do-while ώστε να απαιτήται από το χρήστη να ξαναδώσει την τιμή που του ζητήθηκε αν αυτή που έδωσε προηγουμένως ήταν μη επιτρεπόμενη η προκάλεσε καποιο exception
+            if (c == 1) {  //  ελέγχω αν έχει συμβεί κάποιο exception και αν ναι μηδενίζω ξανά την τιμή του c
                 c = 0;
             }
-            try {
+            try {  //  χρησιμοποιώ το σχήμα try-catch ωστέ να διαχηριστώ το InputMismatchException που μπορεί να προκύψει
                 brand = input.nextLine();
             } catch (InputMismatchException e) {
                 System.out.printf("ERROR: Inappropriate argument passed into the system, please enter a valid argument.");
-                input.nextLine();
-                c = 1;
+                input.nextLine(); // Στο σημείο αυτό το πρόγραμμα οδηγούσε σε ατέρμον βρόγχω και τύπωνε επ άπειρο το παραπάνω μήνυμα στην οθόνη
+                c = 1;  // Εάν συνέυει πράγματι η εξέρεση τότε αποδείδω την τιμή 1 στην μεταβλητή c
             }
-        } while(c == 1);
-        System.out.printf("\nModel:");
+        } while(c == 1);  // Εάν η τιμή της c είναι ίση με 1 τότε αυτό σημαίνει ότι έχει συμβεί εξέρεση η οποία έχει προηγηθεί και πρέπει ο χρήστης να ξαναδώση την τιμή που του ζητήθηκε
+        System.out.printf("\nModel:"); // Το ίδιο ακριβώς μοντέλο χρησιμοποιήθηκε και στην απόδωση τιμής στην μεταβλητή model
         do {
             if (c == 1) {
                 c = 0;
@@ -300,7 +300,7 @@ public class App
                 c = 1;
             }
         } while(c == 1); 
-        System.out.printf("\nYear of production:");
+        System.out.printf("\nYear of production:");  //  Το ίδιο ακριβώς μοντέλο χρησιμοποιήθηκε και στην απόδωση τιμής στην μεταβλητή productionYear
          do {
             if (c == 1) {
                 c = 0;
@@ -312,34 +312,35 @@ public class App
                 input.nextLine();
                 c = 1;
             }
-            if (productionYear < 1886) {
-               c = 1; 
+            if (productionYear < 1886) {  //  Η μόνη διαφορά είναι ότι έχω προσθέση έναν επιπλέον έλεγχω ώστε να συγουρευτώ ότι το έτος παραγωγής είναι μία τιμή 
+               c = 1;                     //  μεγαλήτερη από το έτος παραγωγής του πρώτου αυτοκινήτου που φτιάχτηκε ποτέ
             }
         } while(c == 1);  
         System.out.printf("\n");
-            System.out.printf("Please enter \"1\" or \"2\" to choose an option:\n1) MAIN MENU\n2) SEARCH BAR\n");
+            System.out.printf("Please enter \"1\" or \"2\" to choose an option:\n1) MAIN MENU\n2) SEARCH BAR\n");  //  Δείνω την επίλογη στο χρήστη να επιλέξει αν θέλει να βρεί το κομμάτι 
             do {
+                c = 0;                                                                                                     //  που τον ενδιαφέρει μέσω αναζήτησης η από το προσχεδιασμένο μενού επιλογών
                 try {
-                    key1 = input.nextInt();
-                } catch (InputMismatchException e) {
+                    key1 = input.nextInt();  // Διαβάζω την επιλογή του χρήστη
+                } catch (InputMismatchException e) {  // Ελέγχω αν ο χρήστεις έδωσε κάποια μεταβλητή διαφορετικού τύπου από integer
                     System.out.printf("ERROR: Inappropriate argument passed into the system\nplease enter one " + 
                     "of the accepted values as following:\n \"1\" or\"2\"\n");
                     input.nextLine();
+                    c = 1;
                 }
-                if (key1 == 0) {
-                    continue;
-                }else if (key1 != 1 && key1 != 2) {
+                if (key1 != 1 && key1 != 2) {  // Ελέγχω αν ο χρήστης έδωσε αποδεκτή τιμή
                     System.out.printf("Please enter one of the accepted values ass following:\n \"1\" or\"2\"\n");
+                    c = 1;
                 } 
-            } while (key1 != 1 && key1 != 2);
-            String key3;
+            } while (c == 1); //  Επαναλαμβάνω την διαδηκασία μέχρι ο χρήστης να δώσει μία αποδεκτή τιμή
+            String key3;  //  Oρισμός της μεταβλητής key3 στην οποία αποθηκέυετε η 3η επιλογή του χρήστη εάν χριαστεί
             Scanner k = new Scanner(System.in);    
-            if (key1 == 1) {
-                int key2 = 0;
+            if (key1 == 1) {  //  Εάν επέλεξε την πρώτη επιλογή του εμφανίζει το πρώτο μενού
+                int key2 = 0;  //  Ορίζω την μεταβλητή στην οποία θα αποθηκευτεί η 2η επιλογή τοου χρήστη
                 System.out.printf("Please enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\" to select a category:\n" +
-                "1) STEERING PARTS\n2) CLUTCH PARTS\n3) ENGINE PARTS\n4) PROPELLER SHAFT\n5) BRAKE PARTS\n6) EXTRA\n");
-                do {
-                    try {
+                "1) STEERING PARTS\n2) CLUTCH PARTS\n3) ENGINE PARTS\n4) PROPELLER SHAFT\n5) BRAKE PARTS\n6) EXTRA\n");  //  Εμφανίζω τις κατηγορίες στις οποίες χωρίζονται τα ανταλακτικά 
+                do {  //  Ελεγχώ με αντίστοιχω τρόπο όπως και παραπάνω ότι ο χρήστης έδωσε αποδεκτή τιμή
+                    try {  //  και δε προκλήθηκε κάποιο exception και αν συνέβησε κάτι τέτοιο ξαναζητάω από το χρήστη να μου δώσει μία αποδετή τιμή
                     key2 = input.nextInt();
                     } catch (InputMismatchException e) {
                     System.out.printf("ERROR: Inappropriate argument passed into the system\nplease enter one " + 
@@ -353,9 +354,9 @@ public class App
                 }
                 while (key2 < 1 || key2 > 6);
                 System.out.println("Please enter the number of the part you want to select.");
-                Scanner q = new Scanner(System.in);
+                Scanner q = new Scanner(System.in);  //  Δημιουργώ ένα αντικείμενο της Scanner ώστε να διαβάσω την τρίτη επιλογή του χρήστη
                 if (key2 == 1) {
-                     System.out.println("1.1 UPPER CONTROL ARM\n1.2 UPPER BALL JOINT\n1.3 COIL SPRING\n" +
+                     System.out.println("1.1 UPPER CONTROL ARM\n1.2 UPPER BALL JOINT\n1.3 COIL SPRING\n" +  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 1η κατηγορία
                     "1.4 SNOCK ABSORBER\n1.5 LOWER BALL JOINT\n1.6 LOWER CONTROL ARM\n" +
                     "1.7 CONTROL ARM BUSHINGS\n1.8 STABILIZER LINK\n1.9 IDLER ARM\n" +
                     "1.10 INNER TIE-ROD END\n1.11 CENTER LINK\n1.12 PITMAN ARM\n" +
@@ -365,13 +366,13 @@ public class App
                     "1.21 MACPHERSON STRUT\n1.22 BELLOWS\n1.23 RACK-PINION UNIT\n1.24 RACK-PINION BUSHINGS\n" +
                     "1.25 INNER SCOKET ASSEMBLY\n1.26 WHEEL HUB\n1.27 WHEEL BEARING\n1.28 POWER STEERING");
                 }else if (key2 == 2) {
-                    System.out.println("2.1 SPIGOT BEARING\n2.2 RETAINING SPRING WITH PREFORMED FINGERS\n" +
+                    System.out.println("2.1 SPIGOT BEARING\n2.2 RETAINING SPRING WITH PREFORMED FINGERS\n" +  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 2η κατηγορία
                     "2.3 RELEAS RING\n2.4 RETAINING SPRING\n2.5 BALL PIN FOR CLUCH FORK\n2.6 FLYWHEEL\n" +
                     "2.7 DRIVE DISC\n2.8 PRESSURE PLATE\n2.9 INNER FULCRUM RING\n2.10 OUTER FULCRUM RING" +
                     "2.11 CLUTCH COVER\n2.12 RELEASE FORK\n2.13 RETURN SPRING OF RELEASE FORK\n2.14 RELEASE BEARING" +
                     "2.15 DIAPHRAGM SPRING\n2.16 PILOT BUSHING\n2.17 BELLHOUSING");
                 }else if (key2 == 3) {
-                    System.out.println("3.1 FUEL PUMP\n3.2 CYLINDER HEAD COVER\n3.3 GASKET\n" + 
+                    System.out.println("3.1 FUEL PUMP\n3.2 CYLINDER HEAD COVER\n3.3 GASKET\n" +  //  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 3η κατηγορία
                     "3.4 THERMOSTAT COVER AND GASKET\n3.5 THERMOSTAT\n 3.6 HEAT GAUGE UNIT\n" + 
                     "3.7 BRACKET\n3.8 ROCKER ARM AND SHAFT ASSEMBLE\n3.9 ROCKER ARM\n" + 
                     "3.10 ROCKER ARM SPRING\n3.11 HYDRAULIC LASH ADJUSTSTER\n3.12 CAMSHAFT PULLEY\n" + 
@@ -387,7 +388,7 @@ public class App
                     "3.60 TENSIONING RAIL\n3.61 BALANCE SHAFT CHAIN TENIONING\n3.62 COLLAR BOLT TENSIONING RAIL\n3.63 CHAIN SPROCKET OIL PUMP\n3.64 TENSIONING RAIL OIL PUMP\n" + 
                     "3.65 IDLER\n3.66 CAMSHAFT PULLEY\n3.67 CRANKSHAFT PULLEY");  
                 }else if (key2 == 4) {
-                    System.out.println("4.1 FLANGE YOKE\n4.2 U-JOINT BEARING PLATE STYLE\n4.3 SLIP YOKE BP STYLE\n4.4 TUBE\n" + 
+                    System.out.println("4.1 FLANGE YOKE\n4.2 U-JOINT BEARING PLATE STYLE\n4.3 SLIP YOKE BP STYLE\n4.4 TUBE\n" +  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 4η κατηγορία
                     "4.5 TUBE YOKE\n4.6 END YOKE\n4.7 MIDSHIP SHAFT\n4.8 CENTER BEARING\n4.9 U-JOINT\n" + 
                     "4.10 DIFFERENTIAL\n4.11 AXLE\n4.12 CARRIER\n4.13 RING GEAR\n4.14 AXLE SHAFT SIDE GEAR\n" + 
                     "4.15 AXLE SHAFT\n4.16 AXLE HOUSING\n4.17 PINION GEAR\n4.18 PINION SHAFT\n4.19 FUEL INJECTOR\n" + 
@@ -402,14 +403,14 @@ public class App
                     "4.53 DIFFERENTIAL SIDE GEAR\n4.54 SIDE GEAR\n4.55 DIFFERENTIAL CASE\n4.56 BEARING CAP\n4.57 AXLE HOUSING\n4.58 PINION GEAR\n" +
                     "4.59 RING GEAR\n4.60 TRANSMISSION");
                 }else if (key2 == 5) {
-                    System.out.println("5.1 PRIMARY RETURN SPRING\n5.2 PRIMARY SHOE\n5.3 SHOE HOLD-DOWN\n5.4 PARKING BRAKE CABLE\n5.5 ADJUSTER LEVER SPRING\n" + 
+                    System.out.println("5.1 PRIMARY RETURN SPRING\n5.2 PRIMARY SHOE\n5.3 SHOE HOLD-DOWN\n5.4 PARKING BRAKE CABLE\n5.5 ADJUSTER LEVER SPRING\n" + //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 5η κατηγορία
                     "5.6 BACKING PLATE\n5.7 SECONDARY SHOE RETURN SERING\n5.8 WHEEL CYLINDER ASSEMBLY\n5.9 GEBLE GUIDE\n5.10 PARKING BRAKE STRUT\n" +
                     "5.11 PARKING BRAKE LEVER\n5.12 ADJUSTING CABLE\n5.13 SECONDARY SHOE\n5.14 ADJUSTING LEVER\n5.15 ADJUSTING ASSEMBLY\n" + 
                     "5.16 BLEEDER SCREW\n5.17 CALIPER\n5.18 DUST BOOT\n5.19 PISTON\n5.20 BRAKEPADS\n5.21 ANTI-RATTLE CLIPS\n5.22 ROTOR\n" + 
                     "5.23 PISTON RING\n5.24 LOCK PIN\n5.25 PAD CLIP\n5.26 SHIM\n5.27 PIN BOOTS\n5.28 GUIDEPIN\n5.29 CYLINDER BODY\n" + 
                     "5.30 BLEEDER CAP\n5.31 MOUNTING BRACKET");
                 }else if (key2 == 6) {
-                    System.out.println("6.1 THERMOSTAT\n6.2 RESERVOIR TANK\n6.3 FUEL TANK\n6.4 FUEL TANK PRESSURE SENSOR\n6.5 OXYGEN SENSOR\n" +
+                    System.out.println("6.1 THERMOSTAT\n6.2 RESERVOIR TANK\n6.3 FUEL TANK\n6.4 FUEL TANK PRESSURE SENSOR\n6.5 OXYGEN SENSOR\n" +  //  //  Εμφανίζω τις επιλογές ανταλακτικών-μελών που αφορούν την 6η κατηγορία
                     "6.6 AIR INJECTION CHECK VALVE\n6.7 EGR VALVE\n6.8 PURGE\n6.9 FUEL FILTER\n6.10 FUEL TANK VENT\n6.11 FUEL ISOLATION VALVE\n" +
                     "6.12 HIGH PRESSURE PUMP\n6.13 FUEL RAIL\n6.14 FUEL GAUGE\n6.15 HEATER\n6.16 HEATER BLOWER FAN\n6.17 DRAIN TAP\n" +
                     "6.18 COOLANT TEMPERATURE SENSOR\n6.19 HEATER CONTROL VALVE\n6.20 BLOWER MOTOR\n6.21 OVERFLOW RECOVERY TANK HOSE\n" +
@@ -420,7 +421,7 @@ public class App
                     "6.48 TURBO\n6.49 OIL RETURN GASKET\n6.50 BOOST SOLENOID VALVE");
                 }  
                 do {
-                    key3 = q.nextLine();
+                    key3 = q.nextLine();  //  Διαβάζω την επιλογή του χρήστη
                 } while (!(key3.equals("1.1")) && !(key3.equals("1.2")) && !(key3.equals("1.3")) && !(key3.equals("1.4")) && !(key3.equals("1.5")) &&
                          !(key3.equals("1.6")) && !(key3.equals("1.7")) && !(key3.equals("1.8")) && !(key3.equals("1.9")) && !(key3.equals("1.10")) &&
                          !(key3.equals("1.11")) && !(key3.equals("1.12")) && !(key3.equals("1.13")) && !(key3.equals("1.14")) && !(key3.equals("1.15")) &&
@@ -470,13 +471,13 @@ public class App
                          !(key3.equals("6.34")) && !(key3.equals("6.35")) && !(key3.equals("6.36")) && !(key3.equals("6.37")) && !(key3.equals("6.38")) &&
                          !(key3.equals("6.39")) && !(key3.equals("6.40")) && !(key3.equals("6.41")) && !(key3.equals("6.42")) && !(key3.equals("6.43")) &&
                          !(key3.equals("6.44")) && !(key3.equals("6.45")) && !(key3.equals("6.46")) && !(key3.equals("6.47")) && !(key3.equals("6.48")) &&
-                         !(key3.equals("6.49")) && !(key3.equals("6.50")));
-                q.close();
-            } else {     
+                         !(key3.equals("6.49")) && !(key3.equals("6.50")));  //  Ελέγχω ότι η τιμή που έδωσε ήταν αποδεκτή
+                         q.close();  //  Κλήνω το Scanner q
+            } else {  //  Εφόσον επέλεξε την αναζήτηση  
                 do {
-                    System.out.println("Give the name of the part in capital letters");
+                    System.out.println("Give the name of the part in capital letters");  //  Εμφανίζω τα κατάλληλα μηνύματα και ογηγείες
                     System.out.printf("SEARCH:");
-                    key3 = k.nextLine();
+                    key3 = k.nextLine();  //  Διαβάζω την τιμή που έδωσε
                 } while (!key3.equals("UPPER CONTROL ARM") && !key3.equals("UPPER BALL JOINT") && !key3.equals("COIL SPRING") && !key3.equals("SNOCK ABSORBER") && !key3.equals("LOWER BALL JOINT") && !key3.equals("LOWER CONTROL ARM") && 
                          !key3.equals("CONTROL ARM BUSHINGS") && !key3.equals("STABILIZER LINK") && !key3.equals("IDLER ARM") && !key3.equals("INNER TIE-ROD END") && !key3.equals("CENTER LINK") && !key3.equals("PITMAN ARM") && 
                          !key3.equals("ADJUSTING SLEEVE") && !key3.equals("OUTER TIE-ROD END") && !key3.equals("STEERING KNUCKLE") && !key3.equals("POWER STEERING PUMP") && !key3.equals("POWER STEERING GEARBOX") && !key3.equals("ANTI-SWAY BAR") && 
@@ -519,18 +520,11 @@ public class App
                          !key3.equals("O2 SENSOR") && !key3.equals("NOX SENSOR") && !key3.equals("EGT SENSOR") && !key3.equals("EGR SENSOR") && !key3.equals("DISTRIBUTOR") && !key3.equals("BATTERY") && 
                          !key3.equals("WARM-UP REGULATOR") && !key3.equals("CHOKE VALVE") && !key3.equals("OIL CATCH CAN") && !key3.equals("DOWNPIPE") && !key3.equals("IAC VALVE") && !key3.equals("VSV FOR ACIS") && 
                          !key3.equals("IGNITER") && !key3.equals("ENGINE NOUNT") && !key3.equals("CIRCUIT") && !key3.equals("CLUTCH CYLINDER") && !key3.equals("BLOW OFF VLAVE") && !key3.equals("INTERCOOLER") && 
-                         !key3.equals("TURBO") && !key3.equals("OIL RETURN GASKET") && !key3.equals("BOOST SOLENOID VALVE"));
+                         !key3.equals("TURBO") && !key3.equals("OIL RETURN GASKET") && !key3.equals("BOOST SOLENOID VALVE"));  //  Ελέγχω ότι η τιμή που έδωσε είναι αποδεκτή αλλιώς του ζητάω να την ξαναδώσει
                 System.out.printf("\n");
-                int i = 0;
-                boolean flag = false;
-                while (flag == false) {
-                    if (partsName[i] == key3) {
-                        flag = true;
-                    } 
-                }
-                input.close();
-                k.close();
+                input.close();  // Κλήνω το Scanner input
+                k.close();  // Κλήνω το Scanner k
             }
-            String prompt = "Which is the part number of the " + key3 + "of a " + brand + " " + model + " " + productionYear + "?";
+            String prompt = "Which is the part number of the " + key3 + "of a " + brand + " " + model + " " + productionYear + "?";  // Συντάσω το ερώτημα που πρέπει να απευθήνω στο AI
     }
 }
