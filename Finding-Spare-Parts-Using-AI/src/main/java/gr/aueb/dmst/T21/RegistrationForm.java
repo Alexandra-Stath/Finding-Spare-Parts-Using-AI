@@ -105,5 +105,6 @@ public class RegistrationForm {
         } else {
             System.out.println("Wrong! Please choose 1 or 2"); //Μήνυμα λάθος καταχώρησης για εγγραφή ή σύνδεση
         }
+        scanner.close();
     }
 }
