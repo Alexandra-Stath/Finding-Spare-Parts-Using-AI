@@ -1,4 +1,4 @@
-package gr.aueb.dmst.T21;
+//package gr.aueb.dmst.T21;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -267,7 +267,7 @@ public class App
         partsName[251] = "6.49 OIL RETURN GASKET";
         partsName[252] = "6.50 BOOST SOLENOID VALVE";
     }
-    public static void main( String args[]) throws InputMismatchException {
+    public String model() throws InputMismatchException {
         
         new App();  //  Φτιάχνω ένα αντικείμενο της κλάσης App ώστε να αποδοθούν οι τιμές που πρέπει στον πίνακα partsName
         int key1 = 0;  //  Ορίζω το key1 στο οποίο θα αποθηκευτεί η πρώτη επηλογή του χρήστη
@@ -525,6 +525,7 @@ public class App
                 input.close();  // Κλήνω το Scanner input
                 k.close();  // Κλήνω το Scanner k
             }
-            String prompt = "Which is the part number of the " + key3 + "of a " + brand + " " + model + " " + productionYear + "?";  // Συντάσω το ερώτημα που πρέπει να απευθήνω στο AI
+            String prompt = "Give me details about " + key3 + ", " + brand + " " + model + " " + productionYear + ".";  // Συντάσω το ερώτημα που πρέπει να απευθήνω στο AI
+            return prompt;
     }
 }
