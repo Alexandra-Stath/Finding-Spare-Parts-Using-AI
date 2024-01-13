@@ -1,4 +1,4 @@
-package t21;
+package gr.aueb.dmst.T21;
 import java.util.Scanner;
 public class TestApp {
     static App app = new App(); // make app global and static
