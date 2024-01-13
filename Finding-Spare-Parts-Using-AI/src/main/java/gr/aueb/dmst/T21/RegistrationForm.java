@@ -22,9 +22,14 @@ public class RegistrationForm {
 
             System.out.print("Password: ");
             String password = scanner.nextLine();
-
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } catch(java.lang.ClassNotFoundException e) {
+                System.out.println("ClassNotFoundException: " + e.getMessage());
+                System.exit(0);
+            }
             try { //Ελεγχος εγκυρότητας στοίχειων χρηστη
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/T21?useSSL=false", "root", "PrJaT232!84!1");
+                Connection connection = DriverManager.getConnection("jdbc:localhost:3306/T21?useSSL=false", "root", "PrJaT232!84!1");
     
                 String sql = "SELECT * FROM Users WHERE username = ? AND password = ?";
     
