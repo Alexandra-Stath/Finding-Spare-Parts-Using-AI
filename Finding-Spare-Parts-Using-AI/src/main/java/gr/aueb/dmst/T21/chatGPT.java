@@ -10,7 +10,7 @@ import java.net.URL;
 public class chatGPT {
     public String chatGPT(String message) {
         String url = "https://api.openai.com/v1/chat/completions";
-        String apiKey = "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"; // API key goes here 0d49ad2e00474f0b969e1c3b9a0cadaa.6a4bd9f91d665bf8
+        String apiKey = System.getenv("API_KEY");// API key goes here 0d49ad2e00474f0b969e1c3b9a0cadaa.6a4bd9f91d665bf8
         String model = "gpt-3.5-turbo"; // current model of chatgpt api
 
         try {
