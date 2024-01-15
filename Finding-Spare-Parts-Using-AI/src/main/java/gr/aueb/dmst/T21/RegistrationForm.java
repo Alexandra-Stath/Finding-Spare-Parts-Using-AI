@@ -35,10 +35,19 @@ public class RegistrationForm {
         String password = scanner.nextLine();
 
         try {
+            Scanner sc1 = new Scanner(System.in);
+            // Ask the user the username of DB
+            System.out.println("Please enter your username of DB: ");
+            String usernameDB = sc1.nextLine();
+            //Ask the user the password of DB
+            System.out.println("Please enter your password of DB: ");
+            String passwordDB = sc1.nextLine();
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", "sql8676850", "3QIvIcrqcH");
+
+            Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", usernameDB, passwordDB);
 
             String sql = "SELECT * FROM Users WHERE name = ? AND password = ?";
+            sc1.close();
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, username);
                 statement.setString(2, password);
@@ -81,10 +90,15 @@ public class RegistrationForm {
             email = scanner.nextLine();
 
             try {
-                String user = System.getenv("USER");
-                String pass = System.getenv("PASSWORD");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", user , pass);
-
+                Scanner sc1 = new Scanner(System.in);
+                // Ask the user the username of DB
+                System.out.println("Please enter your username of DB: ");
+                String usernameDB = sc1.nextLine();
+                //Ask the user the password of DB
+                System.out.println("Please enter your password of DB: ");
+                String passwordDB = sc1.nextLine();
+                Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", usernameDB, passwordDB);
+                sc1.close();
                 String checkUser = "SELECT * FROM Users WHERE name = ? OR email = ?";
                 try (PreparedStatement statement = connection.prepareStatement(checkUser)) {
                     statement.setString(1, username);
@@ -104,8 +118,15 @@ public class RegistrationForm {
         }
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", "sql8676850", "3QIvIcrqcH");
-
+            Scanner sc1 = new Scanner(System.in);
+            // Ask the user the username of DB
+            System.out.println("Please enter your username of DB: ");
+            String usernameDB = sc1.nextLine();
+            //Ask the user the password of DB
+            System.out.println("Please enter your password of DB: ");
+            String passwordDB = sc1.nextLine();
+            Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", usernameDB, passwordDB);
+            sc1.close();
             String sql = "INSERT INTO Users (name, password, email) VALUES (?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, username);
