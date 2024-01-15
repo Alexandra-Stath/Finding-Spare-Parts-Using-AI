@@ -28,7 +28,7 @@ public class RegistrationForm {
                 System.out.println("ClassNotFoundException: " + e.getMessage());
                 System.exit(0);
             }
-            try { //Ελεγχος εγκυρότητας στοίχειων χρηστη
+            try { //Έλεγχος εγκυρότητας στοίχειων χρήστη
                 Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", "sql8676850", "3QIvIcrqcH");
     
                 String sql = "SELECT * FROM Users WHERE username = ? AND password = ?";
@@ -38,7 +38,7 @@ public class RegistrationForm {
                 statement.setString(2, password);
     
                 ResultSet resultSet = statement.executeQuery();
-                if (resultSet.next()) { //Κώδικας που τρέχει αφού συμδεθεί ο χρήστης
+                if (resultSet.next()) { //Κώδικας που τρέχει αφού συνδεθεί ο χρήστης
                     System.out.println("Sing in completed!");
 
                     App app = new App();
