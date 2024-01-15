@@ -106,7 +106,9 @@ public class RegistrationForm {
             email = scanner.nextLine();
 
             try {
-                Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", "sql8676850", "3QIvIcrqcH");
+                String user = System.getenv("USER");
+                String pass = System.getenv("PASSWORD");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", USER , PASSWORD);
 
                 String checkUser = "SELECT * FROM Users WHERE name = ? OR email = ?";
                 try (PreparedStatement statement = connection.prepareStatement(checkUser)) {
