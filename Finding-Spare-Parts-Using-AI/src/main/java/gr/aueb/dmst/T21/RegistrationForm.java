@@ -29,7 +29,7 @@ public class RegistrationForm {
                 System.exit(0);
             }
             try { //Ελεγχος εγκυρότητας στοίχειων χρηστη
-                Connection connection = DriverManager.getConnection("jdbc:localhost:3306/T21?useSSL=false", "root", "PrJaT232!84!1");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", "sql8676850", "3QIvIcrqcH");
     
                 String sql = "SELECT * FROM Users WHERE username = ? AND password = ?";
     
