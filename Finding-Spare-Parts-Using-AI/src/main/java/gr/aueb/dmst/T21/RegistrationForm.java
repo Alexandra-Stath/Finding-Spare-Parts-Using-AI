@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import retrofit2.http.HEAD;
-
 public class RegistrationForm {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -27,28 +25,6 @@ public class RegistrationForm {
         scanner.close();
     }
 
-<<<<<<< HEAD
-            System.out.print("Password: ");
-            String password = scanner.nextLine();
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-            } catch(java.lang.ClassNotFoundException e) {
-                System.out.println("ClassNotFoundException: " + e.getMessage());
-                System.exit(0);
-            }
-            try { //Έλεγχος εγκυρότητας στοίχειων χρήστη
-                Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", "sql8676850", "3QIvIcrqcH");
-    
-                String sql = "SELECT * FROM Users WHERE username = ? AND password = ?";
-    
-                PreparedStatement statement = connection.prepareStatement(sql);
-                statement.setString(1, username);
-                statement.setString(2, password);
-    
-                ResultSet resultSet = statement.executeQuery();
-                if (resultSet.next()) { //Κώδικας που τρέχει αφού συνδεθεί ο χρήστης
-                    System.out.println("Sing in completed!");
-=======
     private static void signIn(Scanner scanner) {
         System.out.println("Sign in");
 
@@ -66,7 +42,6 @@ public class RegistrationForm {
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, username);
                 statement.setString(2, password);
->>>>>>> a6c5ffedb1279128feed554e71f464e6df27ddbb
 
                 try (ResultSet resultSet = statement.executeQuery()) {
                     if (resultSet.next()) {
@@ -106,9 +81,7 @@ public class RegistrationForm {
             email = scanner.nextLine();
 
             try {
-                String user = System.getenv("USER");
-                String pass = System.getenv("PASSWORD");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", USER , PASSWORD);
+                Connection connection = DriverManager.getConnection("jdbc:mysql://sql8.freesqldatabase.com:3306/sql8676850", "sql8676850", "3QIvIcrqcH");
 
                 String checkUser = "SELECT * FROM Users WHERE name = ? OR email = ?";
                 try (PreparedStatement statement = connection.prepareStatement(checkUser)) {
