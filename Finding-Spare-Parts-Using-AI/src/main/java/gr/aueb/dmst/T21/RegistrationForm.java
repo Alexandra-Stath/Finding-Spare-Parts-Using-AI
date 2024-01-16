@@ -57,7 +57,7 @@ public class RegistrationForm {
                         System.out.println("Sign in completed!");
 
                         App app = new App();
-                        chatGPT ch = new chatGPT();
+                        ChatGPT ch = new ChatGPT();
 
                         String message = app.model();
                         System.out.println(ch.chatGPT(message));

@@ -8,7 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-public class chatGPT {
+public class ChatGPT {
     public String chatGPT(String message) {
         String url = "https://api.openai.com/v1/chat/completions";
         Scanner sc = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class chatGPT {
         String apiKey = sc.nextLine();
         //String apiKey = System.getenv("API_KEY");// API key goes here 0d49ad2e00474f0b969e1c3b9a0cadaa.6a4bd9f91d665bf8
         String model = "gpt-3.5-turbo"; // current model of chatgpt api
-
+        sc.close();
         try {
             // Create the HTTP POST request
             URL obj = new URL(url);
