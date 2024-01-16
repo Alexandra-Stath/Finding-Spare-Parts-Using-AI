@@ -55,6 +55,7 @@ public class chatGPT {
     public static String extractContentFromResponse(String response) {
         int startMarker = response.indexOf("content")+11; // Marker for where the content starts.
         int endMarker = response.indexOf("\"", startMarker); // Marker for where the content ends.
+        sc.close();
         return response.substring(startMarker, endMarker); // Returns the substring containing only the response.
     }
 }
