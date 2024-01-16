@@ -32,6 +32,9 @@ Then execute the java file using the command.
 After executing the RegistrationForm.java file, the user will be asked to 
 
 ## Repository Structure
+Below you can see the repository's structure: 
+
+![](https://github.com/Alexandra-Stath/Finding-Spare-Parts-Using-AI/blob/development/Screenshot_2.png "Logo Title Text 1")
 
 ## UML Diagram
 
